@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>518 Baby Rats 🐀</title>
-
 <style>
   :root {
     --cream: #fdf6ec;
@@ -1190,69 +1189,8 @@
     min-width: 60px;
   }
 
-  #admin-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--brown);
-    color: white;
-    padding: 10px 18px;
-    border-radius: 30px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-    cursor: pointer;
-    transition: all 0.2s;
-    user-select: none;
-  }
-
-  #admin-toggle:hover { background: var(--rust); transform: translateY(-2px); }
-
-  #admin-toggle .toggle-switch {
-    width: 36px;
-    height: 20px;
-    background: rgba(255,255,255,0.25);
-    border-radius: 10px;
-    position: relative;
-    transition: background 0.2s;
-    flex-shrink: 0;
-  }
-
-  body.admin-mode #admin-toggle .toggle-switch { background: var(--gold); }
-
-  #admin-toggle .toggle-knob {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 14px;
-    height: 14px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.2s;
-  }
-
-  body.admin-mode #admin-toggle .toggle-knob { transform: translateX(16px); }
-
-  #admin-toggle .toggle-label { white-space: nowrap; }
 
 
-
-
-  /* Parents section */
-  #parents-grid, #parents-grid-b {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-
-  @media (max-width: 600px) {
-    #parents-grid, #parents-grid-b { grid-template-columns: 1fr; }
-  }
 
   .parent-card {
     background: var(--card);
@@ -1380,1758 +1318,13 @@
 
   .parent-change-photo:hover { color: var(--rust); }
 
-  /* Subscribe section */OCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>518 Baby Rats 🐀</title>
 
-<style>
-  :root {
-    --cream: #fdf6ec;
-    --warm: #f5e6d0;
-    --brown: #6b3d2e;
-    --rust: #c1541a;
-    --gold: #d4a843;
-    --dark: #2a1a10;
-    --card: #fffdf9;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--cream);
-    font-family: 'Calibri', 'Candara', sans-serif;
-    color: var(--dark);
-    min-height: 100vh;
-  }
-
-  /* Textured background */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c1541a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  header {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 60px 20px 40px;
-    border-bottom: 2px solid var(--warm);
-  }
-
-  .logo-rat {
-    font-size: 3rem;
-    display: block;
-  }
-
-  @keyframes wiggle {
-    0%, 100% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-  }
-
-  header h1 { cursor: default; }
-  header .tagline { cursor: default; }
-  body.admin-mode header h1 { cursor: pointer; }
-  body.admin-mode header h1:hover { text-decoration: underline dotted var(--rust); }
-  body.admin-mode header .tagline { cursor: pointer; }
-  body.admin-mode header .tagline:hover { text-decoration: underline dotted var(--rust); }
-  header h1 {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    color: var(--brown);
-    letter-spacing: -1px;
-    line-height: 1;
-    margin: 10px 0 6px;
-  }
-
-  header p.tagline {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-style: normal;
-    color: var(--rust);
-    font-size: 1.1rem;
-    opacity: 0.85;
-  }
-
-  main {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 24px;
-  }
-
-  .section-title {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.8rem;
-    color: var(--brown);
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, var(--gold), transparent);
-  }
-
-  /* Upload area */
-  .upload-zone {
-    background: var(--card);
-    border: 2px dashed var(--gold);
-    border-radius: 16px;
-    padding: 40px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 50px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .upload-zone::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(212,168,67,0.05), transparent);
-    pointer-events: none;
-  }
-
-  .upload-zone:hover, .upload-zone.drag-over {
-    border-color: var(--rust);
-    background: #fff9f4;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(193,84,26,0.12);
-  }
-
-  .upload-zone input[type="file"] {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-  }
-
-  .upload-icon { font-size: 2.5rem; display: block; margin-bottom: 12px; }
-  .upload-zone h3 {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.3rem;
-    color: var(--brown);
-    margin-bottom: 6px;
-  }
-  .upload-zone p { color: #9a7860; font-size: 0.9rem; }
-
-  /* Form that appears after image selection */
-  #add-form, #add-form-b {
-    background: var(--card);
-    border: 1px solid var(--warm);
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 50px;
-    display: none;
-    box-shadow: 0 4px 20px rgba(107,61,46,0.08);
-    margin-bottom: 28px;
-    animation: slideIn 0.3s ease;
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  #add-form.visible, #add-form-b.visible { display: block; }
-
-  .form-preview {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 3px solid var(--warm);
-    flex-shrink: 0;
-  }
-
-  .form-body {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .form-fields { flex: 1; min-width: 200px; }
-
-  .form-fields label {
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 6px;
-    margin-top: 16px;
-  }
-
-  .form-fields label:first-child { margin-top: 0; }
-
-  .form-fields input, .form-fields textarea {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark);
-    background: var(--cream);
-    transition: border-color 0.2s;
-    outline: none;
-  }
-
-  .form-fields input:focus, .form-fields textarea:focus {
-    border-color: var(--rust);
-  }
-
-  .form-fields textarea { resize: vertical; min-height: 80px; }
-
-  .form-row { display: flex; gap: 14px; }
-  .form-row > div { flex: 1; }
-
-  .btn-add {
-    margin-top: 20px;
-    padding: 12px 32px;
-    background: var(--rust);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .btn-add:hover {
-    background: var(--brown);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(107,61,46,0.3);
-  }
-
-
-
-  /* Multi-image thumbnails in form */
-  .img-thumb-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
-
-  .img-thumb-wrap {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid var(--warm);
-    flex-shrink: 0;
-  }
-
-  .img-thumb-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .img-thumb-wrap .remove-img {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background: rgba(0,0,0,0.55);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 0.6rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
-
-  .img-thumb-wrap.add-more {
-    background: var(--warm);
-    border: 2px dashed var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #a07858;
-    font-size: 1.4rem;
-    font-weight: 300;
-    transition: all 0.2s;
-  }
-
-  .img-thumb-wrap.add-more:hover {
-    border-color: var(--rust);
-    color: var(--rust);
-    background: #fff0e8;
-  }
-
-  /* Carousel on rat card */
-  .rat-card .carousel,
-
-
-
-
-  .carousel-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.35s ease;
-  }
-
-  .carousel-track img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    background: #1a1a1a;
-    flex-shrink: 0;
-  }
-
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
-    border: none;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 2;
-  }
-
-  .rat-card:hover .carousel-btn { opacity: 1; }
-  .parent-card:hover .carousel-btn { opacity: 1; }
-  .carousel-btn.prev { left: 8px; }
-  .carousel-btn.next { right: 8px; }
-
-  .carousel-dots {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 5px;
-    z-index: 2;
-  }
-
-  .carousel-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    transition: background 0.2s;
-  }
-
-  .carousel-dot.active { background: white; }
-
-  /* Add new rat card */
-  .add-rat-card {
-    background: var(--card);
-    border: 2px dashed var(--gold);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #b89a80;
-    gap: 12px;
-  }
-
-  .add-rat-card:hover {
-    border-color: var(--rust);
-    color: var(--rust);
-    background: #fff9f4;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(193,84,26,0.12);
-  }
-
-  .add-rat-card .plus-icon {
-    font-size: 2.5rem;
-    line-height: 1;
-    font-weight: 300;
-  }
-
-  .add-rat-card span {
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-
-  /* Rat grid */
-  #rat-grid, #rat-grid-b {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 28px;
-  }
-
-  .rat-card {
-    background: var(--card);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--warm);
-    box-shadow: 0 2px 10px rgba(107,61,46,0.06);
-    transition: all 0.3s ease;
-    animation: cardIn 0.4s ease both;
-    position: relative;
-  }
-
-  @keyframes cardIn {
-    from { opacity: 0; transform: translateY(20px) scale(0.97); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  .rat-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 40px rgba(107,61,46,0.15);
-  }
-
-  .rat-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    background: #1a1a1a;
-    display: block;
-  }
-
-  .rat-card-body {
-    padding: 18px 20px 22px;
-  }
-
-  .rat-badge {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    background: var(--rust);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.03em;
-  }
-
-  .rat-badge.sold {
-    background: #9a9a9a;
-  }
-
-  .rat-badge.pending {
-    background: var(--gold);
-    color: #2a1a10;
-  }
-
-  .rat-name {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.25rem;
-    color: var(--brown);
-    margin-bottom: 4px;
-  }
-
-  .rat-variety {
-    font-size: 0.8rem;
-    color: var(--rust);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 10px;
-  }
-
-  .rat-desc {
-    font-size: 0.9rem;
-    color: #6b5040;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
-  .rat-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid var(--warm);
-    padding-top: 14px;
-    margin-top: 4px;
-  }
-
-  .rat-price {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.3rem;
-    color: var(--brown);
-    font-weight: 700;
-  }
-
-  .btn-contact {
-    padding: 8px 18px;
-    background: transparent;
-    color: var(--rust);
-    border: 1.5px solid var(--rust);
-    border-radius: 6px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .btn-contact:hover {
-    background: var(--rust);
-    color: white;
-  }
-
-
-  .btn-edit-listing {
-    position: absolute;
-    top: 46px;
-    left: 14px;
-    background: rgba(255,255,255,0.85);
-    border: none;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    font-size: 0.75rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  .rat-card:hover .btn-edit-listing { opacity: 1; }
-
-  .btn-delete {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: rgba(255,255,255,0.85);
-    border: none;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s;
-    color: #c00;
-  }
-
-  .rat-card:hover .btn-delete { opacity: 1; }
-
-  .empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 80px 20px;
-    color: #b89a80;
-  }
-
-  .empty-state .big-rat { font-size: 4rem; display: block; margin-bottom: 16px; opacity: 0.4; }
-  .empty-state p { font-family: 'Calibri', 'Candara', sans-serif; font-style: italic; font-size: 1.1rem; }
-
-  /* Contact modal */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(42,26,16,0.5);
-    z-index: 100;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(3px);
-  }
-
-  .modal-overlay.open { display: flex; }
-
-  .modal {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 40px;
-    max-width: 420px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(42,26,16,0.3);
-    animation: slideIn 0.3s ease;
-  }
-
-  .modal h3 {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.5rem;
-    color: var(--brown);
-    margin-bottom: 10px;
-  }
-
-  .modal p { color: #6b5040; line-height: 1.6; margin-bottom: 20px; }
-
-  .modal input {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    background: var(--cream);
-    outline: none;
-    margin-bottom: 12px;
-  }
-
-  .modal input:focus { border-color: var(--rust); }
-
-  .modal-btns { display: flex; gap: 10px; justify-content: center; }
-
-  .btn-modal-send {
-    padding: 10px 28px;
-    background: var(--rust);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .btn-modal-send:hover { background: var(--brown); }
-
-  .btn-modal-cancel {
-    padding: 10px 20px;
-    background: transparent;
-    color: #9a7860;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    cursor: pointer;
-  }
-
-  /* About Our Home */
-  #about-section {
-    position: relative;
-    z-index: 1;
-    background: var(--card);
-    border: 1px solid var(--warm);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(107,61,46,0.06);
-  }
-
-  #about-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 24px;
-  }
-
-  #about-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-
-  #about-header .section-title {
-    margin-bottom: 0;
-    flex: 1;
-  }
-
-  #edit-btn {
-    padding: 7px 18px;
-    background: transparent;
-    color: var(--rust);
-    border: 1.5px solid var(--rust);
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  #edit-btn:hover { background: var(--rust); color: white; }
-
-  #about-display { min-height: 60px; color: #6b5040; }
-
-  #about-display p,
-  #about-display div,
-  #about-display span,
-  #about-display * {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #6b5040 !important;
-  }
-
-  #about-placeholder { color: #c4a98a !important; font-style: italic; }
-
-  #about-textarea {
-    display: none;
-    width: 100%;
-    min-height: 150px;
-    padding: 14px;
-    border: 1.5px solid var(--rust);
-    border-radius: 10px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--dark);
-    background: var(--cream);
-    resize: vertical;
-    outline: none;
-  }
-
-  #about-actions {
-    display: none;
-    gap: 10px;
-    margin-top: 12px;
-  }
-
-  #save-btn {
-    padding: 9px 24px;
-    background: var(--rust);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  #save-btn:hover { background: var(--brown); }
-
-  #cancel-btn {
-    padding: 9px 18px;
-    background: transparent;
-    color: #9a7860;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.9rem;
-    cursor: pointer;
-  }
-
-  /* Parents section */
-  #parents-grid, #parents-grid-b {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-
-  @media (max-width: 600px) {
-    #parents-grid, #parents-grid-b { grid-template-columns: 1fr; }
-  }
-
-  .parent-card {
-    background: var(--card);
-    border: 1px solid var(--warm);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(107,61,46,0.06);
-    transition: box-shadow 0.3s;
-  }
-
-  .parent-card:hover {
-    box-shadow: 0 10px 32px rgba(107,61,46,0.13);
-  }
-
-  .parent-photo-box {
-    width: 100%;
-    height: 480px;
-    background: var(--warm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #e8d9c8;
-    overflow: hidden;
-  }
-
-  .parent-upload-area {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #a07858;
-    font-size: 0.95rem;
-    transition: background 0.2s;
-  }
-
-  .parent-upload-area:hover { background: #eddfc8; }
-
-  .parent-photo {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-  }
-
-  .parent-info {
-    padding: 20px 22px 24px;
-  }
-
-  .parent-label {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0.02em;
-    color: var(--rust);
-    margin-bottom: 4px;
-  }
-
-  .parent-name-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-
-  .parent-name {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.4rem;
-    color: var(--brown);
-  }
-
-  .btn-edit-parent {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-    padding: 2px 6px;
-  }
-
-  .btn-edit-parent:hover { opacity: 1; }
-
-  .parent-desc {
-    font-size: 0.9rem;
-    color: #6b5040;
-    line-height: 1.65;
-    margin-bottom: 14px;
-    font-style: italic;
-  }
-
-  .parent-edit-fields input,
-  .parent-edit-fields textarea {
-    width: 100%;
-    padding: 9px 12px;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.92rem;
-    color: var(--dark);
-    background: var(--cream);
-    outline: none;
-    margin-bottom: 8px;
-  }
-
-  .parent-edit-fields input:focus,
-  .parent-edit-fields textarea:focus { border-color: var(--rust); }
-
-  .parent-edit-fields textarea { resize: vertical; min-height: 80px; }
-
-  .parent-change-photo {
-    background: none;
-    border: none;
-    color: #b89a80;
-    font-size: 0.78rem;
-    cursor: pointer;
-    text-decoration: underline;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    padding: 0;
-  }
-
-  .parent-change-photo:hover { color: var(--rust); }
-
-  /* Subscribe section */
-  #subscribe-section {
-    position: relative;
-    z-index: 1;
-    background: var(--brown);
-    padding: 30px 24px;
-    text-align: center;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(107,61,46,0.15);
-  }
-
-  #subscribe-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-
-  #subscribe-section h2 {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 2rem;
-    color: var(--cream);
-    margin-bottom: 8px;
-    position: relative;
-  }
-
-  #subscribe-section p {
-    color: #c4a98a;
-    font-size: 0.95rem;
-    margin-bottom: 28px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-style: normal;
-    position: relative;
-  }
-
-  .subscribe-form {
-    display: flex;
-    gap: 0;
-    max-width: 440px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-  }
-
-  .subscribe-form input {
-    flex: 1;
-    padding: 14px 20px;
-    border: none;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    background: var(--cream);
-    color: var(--dark);
-    outline: none;
-  }
-
-  .subscribe-form input::placeholder { color: #b89a80; }
-
-  .subscribe-form button {
-    padding: 14px 24px;
-    background: var(--rust);
-    color: white;
-    border: none;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-
-  .subscribe-form button:hover { background: #a04415; }
-
-  .subscribe-success {
-    display: none;
-    color: var(--gold);
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-top: 16px;
-    position: relative;
-    animation: slideIn 0.4s ease;
-  }
-
-
-  /* Rich editor */
-  .rich-editor-toolbar {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    padding: 8px 10px;
-    background: var(--warm);
-    border: 1.5px solid var(--rust);
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-  }
-
-  .rich-editor-toolbar button {
-    padding: 5px 10px;
-    background: white;
-    border: 1px solid #e8d9c8;
-    border-radius: 6px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.8rem;
-    cursor: pointer;
-    color: var(--brown);
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-
-  .rich-editor-toolbar button:hover {
-    background: var(--rust);
-    color: white;
-    border-color: var(--rust);
-  }
-
-  .rich-editor-body {
-    min-height: 160px;
-    padding: 14px;
-    border: 1.5px solid var(--rust);
-    border-radius: 0 0 10px 10px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--dark);
-    background: var(--cream);
-    outline: none;
-    cursor: text;
-  }
-
-  .rich-editor-body:empty::before {
-    content: attr(data-placeholder);
-    color: #c4a98a;
-    font-style: italic;
-    pointer-events: none;
-  }
-
-  .rich-editor-body img {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 8px;
-    margin: 8px 0;
-    display: block;
-    cursor: pointer;
-  }
-
-  .rich-editor-body img:hover {
-    outline: 2px solid var(--rust);
-  }
-
-  .rich-editor-body a {
-    color: var(--rust);
-    text-decoration: underline;
-  }
-
-  .rich-editor-display img {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 8px;
-    margin: 8px 0;
-    display: block;
-  }
-
-  .rich-editor-display a {
-    color: var(--rust);
-    text-decoration: underline;
-  }
-
-  .rich-editor-display p, .rich-editor-display div,
-  .rich-editor-display span, .rich-editor-display li,
-  .rich-editor-display h1, .rich-editor-display h2,
-  .rich-editor-display h3 {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #6b5040;
-  }
-
-  .rich-editor-body, .rich-editor-body * {
-    color: #6b5040;
-  }
-
-  .rich-file-input { display: none; }
-
-
-  /* Admin mode */
-  .admin-only { display: none !important; }
-  .admin-only-flex { display: none !important; }
-  .admin-only-inline { display: none !important; }
-  body.admin-mode .admin-only { display: block !important; }
-  body.admin-mode .admin-only-flex { display: flex !important; }
-  body.admin-mode .admin-only-inline { display: inline-block !important; }
-
-  #admin-bar {
-    display: none;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    background: var(--brown);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.8rem;
-    z-index: 999;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  }
-
-  body.admin-mode #admin-bar { display: flex; }
-
-  #admin-bar button {
-    background: var(--rust);
-    border: none;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.75rem;
-    cursor: pointer;
-  }
-
-  #admin-login-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(42,26,16,0.6);
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(3px);
-  }
-
-  #admin-login-modal.open { display: flex; }
-
-  #admin-login-box {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 40px;
-    max-width: 360px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(42,26,16,0.3);
-  }
-
-  #admin-login-box h3 {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.4rem;
-    color: var(--brown);
-    margin-bottom: 8px;
-  }
-
-  #admin-login-box p {
-    color: #9a7860;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-
-  #admin-password-input {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    background: var(--cream);
-    outline: none;
-    margin-bottom: 12px;
-  }
-
-  #admin-password-input:focus { border-color: var(--rust); }
-
-  #admin-login-error {
-    color: var(--rust);
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-    display: none;
-  }
-
-  #secret-trigger {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    z-index: 998;
-    cursor: default;
-  }
-
-
-  body.admin-mode .section-title { cursor: pointer; }
-  body.admin-mode .section-title:hover { opacity: 0.75; }
-  .section-title[contenteditable="true"] {
-    outline: none;
-    border-bottom: 2px solid var(--rust);
-    min-width: 60px;
-  }
-
-  #admin-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--brown);
-    color: white;
-    padding: 10px 18px;
-    border-radius: 30px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-    cursor: pointer;
-    transition: all 0.2s;
-    user-select: none;
-  }
-
-  #admin-toggle:hover { background: var(--rust); transform: translateY(-2px); }
-
-  #admin-toggle .toggle-switch {
-    width: 36px;
-    height: 20px;
-    background: rgba(255,255,255,0.25);
-    border-radius: 10px;
-    position: relative;
-    transition: background 0.2s;
-    flex-shrink: 0;
-  }
-
-  body.admin-mode #admin-toggle .toggle-switch { background: var(--gold); }
-
-  #admin-toggle .toggle-knob {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 14px;
-    height: 14px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.2s;
-  }
-
-  body.admin-mode #admin-toggle .toggle-knob { transform: translateX(16px); }
-
-  #admin-toggle .toggle-label { white-space: nowrap; }
-
-
-
-
-  /* Parents section */
-  #parents-grid, #parents-grid-b {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-
-  @media (max-width: 600px) {
-    #parents-grid, #parents-grid-b { grid-template-columns: 1fr; }
-  }
-
-  .parent-card {
-    background: var(--card);
-    border: 1px solid var(--warm);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(107,61,46,0.06);
-    transition: box-shadow 0.3s;
-  }
-
-  .parent-card:hover {
-    box-shadow: 0 10px 32px rgba(107,61,46,0.13);
-  }
-
-  .parent-photo-box {
-    width: 100%;
-    height: 480px;
-    background: var(--warm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #e8d9c8;
-    overflow: hidden;
-  }
-
-  .parent-upload-area {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #a07858;
-    font-size: 0.95rem;
-    transition: background 0.2s;
-  }
-
-  .parent-upload-area:hover { background: #eddfc8; }
-
-  .parent-photo {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-  }
-
-  .parent-info {
-    padding: 20px 22px 24px;
-  }
-
-  .parent-label {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0.02em;
-    color: var(--rust);
-    margin-bottom: 4px;
-  }
-
-  .parent-name-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-
-  .parent-name {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.4rem;
-    color: var(--brown);
-  }
-
-  .btn-edit-parent {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-    padding: 2px 6px;
-  }
-
-  .btn-edit-parent:hover { opacity: 1; }
-
-  .parent-desc {
-    font-size: 0.9rem;
-    color: #6b5040;
-    line-height: 1.65;
-    margin-bottom: 14px;
-    font-style: italic;
-  }
-
-  .parent-edit-fields input,
-  .parent-edit-fields textarea {
-    width: 100%;
-    padding: 9px 12px;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.92rem;
-    color: var(--dark);
-    background: var(--cream);
-    outline: none;
-    margin-bottom: 8px;
-  }
-
-  .parent-edit-fields input:focus,
-  .parent-edit-fields textarea:focus { border-color: var(--rust); }
-
-  .parent-edit-fields textarea { resize: vertical; min-height: 80px; }
-
-  .parent-change-photo {
-    background: none;
-    border: none;
-    color: #b89a80;
-    font-size: 0.78rem;
-    cursor: pointer;
-    text-decoration: underline;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    padding: 0;
-  }
-
-  .parent-change-photo:hover { color: var(--rust); }
-
-  /* Subscribe section */
-  #subscribe-section {
-    position: relative;
-    z-index: 1;
-    background: var(--brown);
-    padding: 30px 24px;
-    text-align: center;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(107,61,46,0.15);
-  }
-
-  #subscribe-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-
-  #subscribe-section h2 {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 2rem;
-    color: var(--cream);
-    margin-bottom: 8px;
-    position: relative;
-  }
-
-  #subscribe-section p {
-    color: #c4a98a;
-    font-size: 0.95rem;
-    margin-bottom: 28px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-style: normal;
-    position: relative;
-  }
-
-  .subscribe-form {
-    display: flex;
-    gap: 0;
-    max-width: 440px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-  }
-
-  .subscribe-form input {
-    flex: 1;
-    padding: 14px 20px;
-    border: none;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    background: var(--cream);
-    color: var(--dark);
-    outline: none;
-  }
-
-  .subscribe-form input::placeholder { color: #b89a80; }
-
-  .subscribe-form button {
-    padding: 14px 24px;
-    background: var(--rust);
-    color: white;
-    border: none;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-
-  .subscribe-form button:hover { background: #a04415; }
-
-  .subscribe-success {
-    display: none;
-    color: var(--gold);
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-top: 16px;
-    position: relative;
-    animation: slideIn 0.4s ease;
-  }
-
-
-  /* Rich editor */
-  .rich-editor-toolbar {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    padding: 8px 10px;
-    background: var(--warm);
-    border: 1.5px solid var(--rust);
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-  }
-
-  .rich-editor-toolbar button {
-    padding: 5px 10px;
-    background: white;
-    border: 1px solid #e8d9c8;
-    border-radius: 6px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.8rem;
-    cursor: pointer;
-    color: var(--brown);
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-
-  .rich-editor-toolbar button:hover {
-    background: var(--rust);
-    color: white;
-    border-color: var(--rust);
-  }
-
-  .rich-editor-body {
-    min-height: 160px;
-    padding: 14px;
-    border: 1.5px solid var(--rust);
-    border-radius: 0 0 10px 10px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--dark);
-    background: var(--cream);
-    outline: none;
-    cursor: text;
-  }
-
-  .rich-editor-body:empty::before {
-    content: attr(data-placeholder);
-    color: #c4a98a;
-    font-style: italic;
-    pointer-events: none;
-  }
-
-  .rich-editor-body img {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 8px;
-    margin: 8px 0;
-    display: block;
-    cursor: pointer;
-  }
-
-  .rich-editor-body img:hover {
-    outline: 2px solid var(--rust);
-  }
-
-  .rich-editor-body a {
-    color: var(--rust);
-    text-decoration: underline;
-  }
-
-  .rich-editor-display img {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 8px;
-    margin: 8px 0;
-    display: block;
-  }
-
-  .rich-editor-display a {
-    color: var(--rust);
-    text-decoration: underline;
-  }
-
-  .rich-editor-display p, .rich-editor-display div,
-  .rich-editor-display span, .rich-editor-display li,
-  .rich-editor-display h1, .rich-editor-display h2,
-  .rich-editor-display h3 {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #6b5040;
-  }
-
-  .rich-editor-body, .rich-editor-body * {
-    color: #6b5040;
-  }
-
-  .rich-file-input { display: none; }
-
-
-  /* Admin mode */
-  .admin-only { display: none !important; }
-  .admin-only-flex { display: none !important; }
-  .admin-only-inline { display: none !important; }
-  body.admin-mode .admin-only { display: block !important; }
-  body.admin-mode .admin-only-flex { display: flex !important; }
-  body.admin-mode .admin-only-inline { display: inline-block !important; }
-
-  #admin-bar {
-    display: none;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    background: var(--brown);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.8rem;
-    z-index: 999;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  }
-
-  body.admin-mode #admin-bar { display: flex; }
-
-  #admin-bar button {
-    background: var(--rust);
-    border: none;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.75rem;
-    cursor: pointer;
-  }
-
-  #admin-login-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(42,26,16,0.6);
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(3px);
-  }
-
-  #admin-login-modal.open { display: flex; }
-
-  #admin-login-box {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 40px;
-    max-width: 360px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(42,26,16,0.3);
-  }
-
-  #admin-login-box h3 {
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 1.4rem;
-    color: var(--brown);
-    margin-bottom: 8px;
-  }
-
-  #admin-login-box p {
-    color: #9a7860;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-
-  #admin-password-input {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid #e8d9c8;
-    border-radius: 8px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.95rem;
-    background: var(--cream);
-    outline: none;
-    margin-bottom: 12px;
-  }
-
-  #admin-password-input:focus { border-color: var(--rust); }
-
-  #admin-login-error {
-    color: var(--rust);
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-    display: none;
-  }
-
-  #secret-trigger {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    z-index: 998;
-    cursor: default;
-  }
-
-
-  body.admin-mode .section-title { cursor: pointer; }
-  body.admin-mode .section-title:hover { opacity: 0.75; }
-  .section-title[contenteditable="true"] {
-    outline: none;
-    border-bottom: 2px solid var(--rust);
-    min-width: 60px;
-  }
-
-  #admin-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--brown);
-    color: white;
-    padding: 10px 18px;
-    border-radius: 30px;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-    cursor: pointer;
-    transition: all 0.2s;
-    user-select: none;
-  }
-
-  #admin-toggle:hover { background: var(--rust); transform: translateY(-2px); }
-
-  #admin-toggle .toggle-switch {
-    width: 36px;
-    height: 20px;
-    background: rgba(255,255,255,0.25);
-    border-radius: 10px;
-    position: relative;
-    transition: background 0.2s;
-    flex-shrink: 0;
-  }
-
-  body.admin-mode #admin-toggle .toggle-switch { background: var(--gold); }
-
-  #admin-toggle .toggle-knob {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 14px;
-    height: 14px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.2s;
-  }
-
-  body.admin-mode #admin-toggle .toggle-knob { transform: translateX(16px); }
-
-  #admin-toggle .toggle-label { white-space: nowrap; }
-
-
-
-
-  footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid var(--warm);
-    color: #b89a80;
-    font-size: 0.85rem;
-    font-family: 'Calibri', 'Candara', sans-serif;
-    font-style: italic;
-  }
 </style>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, doc, setDoc, getDoc, getDocs, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-  import { getStorage, ref, uploadString, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+  import { getFirestore, collection, doc, setDoc, getDoc, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  import { getStorage, ref, uploadString, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyAnFIXwrfUM-vXz2i5HU44OCIYDDGexHDc",
@@ -3146,15 +1339,7 @@
   const db = getFirestore(app);
   const storage = getStorage(app);
 
-  // Show loading state
-  function showLoading() {
-    document.getElementById('rat-grid').innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">🐀</span><p>Loading...</p></div>';
-  }
-
-  // ── RATS ──────────────────────────────────────────────
-
   async function saveRatToDb(rat) {
-    // Upload images to Storage, replace base64 with URLs
     const urls = [];
     for (let i = 0; i < rat.images.length; i++) {
       const img = rat.images[i];
@@ -3178,8 +1363,6 @@
     return snap.docs.map(d => d.data());
   }
 
-  // ── PARENTS ───────────────────────────────────────────
-
   async function saveParentToDb(who, data, images) {
     const urls = [];
     for (let i = 0; i < images.length; i++) {
@@ -3200,7 +1383,10 @@
     return { mom: mom.exists() ? mom.data() : null, dad: dad.exists() ? dad.data() : null };
   }
 
-  // ── ABOUT ─────────────────────────────────────────────
+  async function loadParentByKey(key) {
+    const snap = await getDoc(doc(db, 'parents', key));
+    return snap.exists() ? snap.data() : null;
+  }
 
   async function saveAboutToDb(html) {
     await setDoc(doc(db, 'settings', 'about'), { html });
@@ -3211,8 +1397,6 @@
     return snap.exists() ? snap.data().html : null;
   }
 
-  // ── SITE TEXT ─────────────────────────────────────────
-
   async function saveSiteTextToDb(data) {
     await setDoc(doc(db, 'settings', 'siteText'), data);
   }
@@ -3222,24 +1406,18 @@
     return snap.exists() ? snap.data() : null;
   }
 
-  // ── EXPOSE TO MAIN SCRIPT ─────────────────────────────
-
   window.db_saveRat = saveRatToDb;
   window.db_deleteRat = deleteRatFromDb;
   window.db_loadRats = loadRatsFromDb;
   window.db_saveParent = saveParentToDb;
   window.db_loadParents = loadParentsFromDb;
-  window.db_loadParentB = async function(key) {
-    const snap = await getDoc(doc(db, 'parents', key));
-    return snap.exists() ? snap.data() : null;
-  };
+  window.db_loadParentB = loadParentByKey;
   window.db_saveAbout = saveAboutToDb;
   window.db_loadAbout = loadAboutFromDb;
   window.db_saveSiteText = saveSiteTextToDb;
   window.db_loadSiteText = loadSiteTextFromDb;
   window.dbReady = true;
   window.dispatchEvent(new Event('dbReady'));
-
 </script>
 </head>
 <body>
@@ -3247,7 +1425,7 @@
 <header>
   <span class="logo-rat">🐀</span>
   <div style="position:relative; display:inline-block;">
-    <h1 id="site-title" onclick="if(isAdmin) editHeaderField('site-title', 'site-title-input')" title="">518 Baby Rats</h1>
+    <h1 id="site-title" onclick="if(isAdmin) editHeaderField('site-title','site-title-input')" title="">518 Baby Rats</h1>
     <input id="site-title-input" type="text" onblur="saveHeaderField('site-title','site-title-input')" onkeydown="if(event.key==='Enter') this.blur()" style="display:none; font-family:'Calibri','Candara',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); color:var(--brown); letter-spacing:-1px; line-height:1; border:none; border-bottom:2px solid var(--rust); background:transparent; outline:none; text-align:center; width:100%;">
   </div>
   <div style="position:relative; display:block;">
@@ -3256,21 +1434,15 @@
   </div>
 </header>
 
-
-
 <main>
   <div style="display:flex; align-items:center; margin-bottom:30px;">
     <h2 class="section-title" style="margin-bottom:0; flex:1" id="title-available" onclick="editSectionTitle(this)" title="">Available Rats</h2>
     <button onclick="triggerUpload()" class="admin-only-inline" style="display:none; padding:7px 16px; background:var(--rust); color:white; border:none; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--rust)'">+ Add Rat</button>
   </div>
-
-  <!-- Hidden file input -->
   <input type="file" id="file-input" accept="image/*" style="display:none" multiple>
-
-  <!-- Inline add form (hidden until image chosen) -->
   <div id="add-form">
     <div class="form-body">
-      <div id="form-images-col" style="flex-shrink:0">
+      <div style="flex-shrink:0">
         <div class="img-thumb-row" id="form-thumb-row">
           <div class="img-thumb-wrap add-more" onclick="document.getElementById('file-input').click()" title="Add photo">+</div>
         </div>
@@ -3280,16 +1452,10 @@
         <label>Description</label>
         <textarea id="input-desc" placeholder=""></textarea>
         <div class="form-row">
-          <div>
-            <label>Price ($)</label>
-            <input type="number" id="input-price" placeholder="" min="0">
-          </div>
-          <div>
-            <label>Sex</label>
+          <div><label>Price ($)</label><input type="number" id="input-price" placeholder="" min="0"></div>
+          <div><label>Sex</label>
             <select id="input-sex" style="width:100%; padding:10px 14px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.95rem; color:var(--dark); background:var(--cream); outline:none; cursor:pointer">
-              <option value="">Select...</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
+              <option value="">Select...</option><option value="Female">Female</option><option value="Male">Male</option>
             </select>
           </div>
         </div>
@@ -3300,18 +1466,16 @@
       </div>
     </div>
   </div>
-
   <div id="rat-grid"></div>
-  <!-- Parent Showcase -->
-  <div style="margin-top: 60px;">
+
+  <div style="margin-top:60px;">
     <h2 class="section-title" id="title-parents" onclick="editSectionTitle(this)" title="">Meet the Parents</h2>
     <div id="parents-grid">
       <div class="parent-card" id="parent-mom">
-        <input type="file" id="mom-file" accept="image/*" style="display:none" onchange="loadParent('mom', this)">
+        <input type="file" id="mom-file" accept="image/*" style="display:none" onchange="loadParent('mom',this)">
         <div class="parent-photo-box" id="mom-photo-box">
           <div class="parent-upload-area admin-only" id="mom-upload-area" onclick="document.getElementById('mom-file').click()">
-            <span style="font-size:2.5rem; display:block; margin-bottom:10px;">🐀</span>
-            <p>Upload Mom's Photo</p>
+            <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Mom's Photo</p>
           </div>
           <img id="mom-img" class="parent-photo" style="display:none">
         </div>
@@ -3325,21 +1489,19 @@
           <div class="parent-edit-fields" id="mom-edit" style="display:none">
             <input type="text" id="mom-name-input" placeholder="Mom's name">
             <textarea id="mom-desc-input" placeholder="Variety, temperament, health notes..."></textarea>
-            <div style="display:flex; gap:8px; margin-top:8px;">
-              <button class="btn-add" style="padding:8px 20px; margin-top:0" onclick="saveParent('mom')">Save</button>
+            <div style="display:flex;gap:8px;margin-top:8px;">
+              <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParent('mom')">Save</button>
               <button class="btn-modal-cancel" onclick="cancelParent('mom')">Cancel</button>
             </div>
           </div>
           <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('mom-file').click()">Change Photo</button>
         </div>
       </div>
-
       <div class="parent-card" id="parent-dad">
-        <input type="file" id="dad-file" accept="image/*" style="display:none" onchange="loadParent('dad', this)">
+        <input type="file" id="dad-file" accept="image/*" style="display:none" onchange="loadParent('dad',this)">
         <div class="parent-photo-box" id="dad-photo-box">
           <div class="parent-upload-area admin-only" id="dad-upload-area" onclick="document.getElementById('dad-file').click()">
-            <span style="font-size:2.5rem; display:block; margin-bottom:10px;">🐀</span>
-            <p>Upload Dad's Photo</p>
+            <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Dad's Photo</p>
           </div>
           <img id="dad-img" class="parent-photo" style="display:none">
         </div>
@@ -3353,8 +1515,8 @@
           <div class="parent-edit-fields" id="dad-edit" style="display:none">
             <input type="text" id="dad-name-input" placeholder="Dad's name">
             <textarea id="dad-desc-input" placeholder="Variety, temperament, health notes..."></textarea>
-            <div style="display:flex; gap:8px; margin-top:8px;">
-              <button class="btn-add" style="padding:8px 20px; margin-top:0" onclick="saveParent('dad')">Save</button>
+            <div style="display:flex;gap:8px;margin-top:8px;">
+              <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParent('dad')">Save</button>
               <button class="btn-modal-cancel" onclick="cancelParent('dad')">Cancel</button>
             </div>
           </div>
@@ -3364,18 +1526,15 @@
     </div>
   </div>
 
-  <!-- Litter 2: Available Rats -->
-  <div style="margin-top: 80px; border-top: 2px solid var(--warm); padding-top: 60px;">
+  <div style="margin-top:80px; border-top:2px solid var(--warm); padding-top:60px;">
     <div style="display:flex; align-items:center; margin-bottom:30px;">
       <h2 class="section-title" style="margin-bottom:0; flex:1" id="title-available-b" onclick="editSectionTitle(this)" title="">Available Rats</h2>
       <button onclick="triggerUploadB()" class="admin-only-inline" style="display:none; padding:7px 16px; background:var(--rust); color:white; border:none; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--rust)'">+ Add Rat</button>
     </div>
-
     <input type="file" id="file-input-b" accept="image/*" style="display:none" multiple>
-
     <div id="add-form-b">
       <div class="form-body">
-        <div id="form-images-col-b" style="flex-shrink:0">
+        <div style="flex-shrink:0">
           <div class="img-thumb-row" id="form-thumb-row-b">
             <div class="img-thumb-wrap add-more" onclick="document.getElementById('file-input-b').click()" title="Add photo">+</div>
           </div>
@@ -3385,16 +1544,10 @@
           <label>Description</label>
           <textarea id="input-desc-b" placeholder=""></textarea>
           <div class="form-row">
-            <div>
-              <label>Price ($)</label>
-              <input type="number" id="input-price-b" placeholder="" min="0">
-            </div>
-            <div>
-              <label>Sex</label>
+            <div><label>Price ($)</label><input type="number" id="input-price-b" placeholder="" min="0"></div>
+            <div><label>Sex</label>
               <select id="input-sex-b" style="width:100%; padding:10px 14px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.95rem; color:var(--dark); background:var(--cream); outline:none; cursor:pointer">
-                <option value="">Select...</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
+                <option value="">Select...</option><option value="Female">Female</option><option value="Male">Male</option>
               </select>
             </div>
           </div>
@@ -3405,19 +1558,16 @@
         </div>
       </div>
     </div>
-
     <div id="rat-grid-b"></div>
 
-    <!-- Litter 2 Parents -->
-    <div style="margin-top: 60px;">
+    <div style="margin-top:60px;">
       <h2 class="section-title" id="title-parents-b" onclick="editSectionTitle(this)" title="">Meet the Parents</h2>
-      <div id="parents-grid-b" class="parents-grid">
+      <div id="parents-grid-b">
         <div class="parent-card" id="parent-mom-b">
-          <input type="file" id="mom-file-b" accept="image/*" style="display:none" onchange="loadParentB('mom', this)">
+          <input type="file" id="mom-file-b" accept="image/*" style="display:none" onchange="loadParentB('mom',this)">
           <div class="parent-photo-box" id="mom-photo-box-b">
             <div class="parent-upload-area admin-only" id="mom-upload-area-b" onclick="document.getElementById('mom-file-b').click()">
-              <span style="font-size:2.5rem; display:block; margin-bottom:10px;">🐀</span>
-              <p>Upload Mom's Photo</p>
+              <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Mom's Photo</p>
             </div>
             <img id="mom-img-b" class="parent-photo" style="display:none">
           </div>
@@ -3431,21 +1581,19 @@
             <div class="parent-edit-fields" id="mom-edit-b" style="display:none">
               <input type="text" id="mom-name-input-b" placeholder="Mom's name">
               <textarea id="mom-desc-input-b" placeholder="Variety, temperament, health notes..."></textarea>
-              <div style="display:flex; gap:8px; margin-top:8px;">
-                <button class="btn-add" style="padding:8px 20px; margin-top:0" onclick="saveParentB('mom')">Save</button>
+              <div style="display:flex;gap:8px;margin-top:8px;">
+                <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParentB('mom')">Save</button>
                 <button class="btn-modal-cancel" onclick="cancelParentB('mom')">Cancel</button>
               </div>
             </div>
             <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('mom-file-b').click()">Change Photo</button>
           </div>
         </div>
-
         <div class="parent-card" id="parent-dad-b">
-          <input type="file" id="dad-file-b" accept="image/*" style="display:none" onchange="loadParentB('dad', this)">
+          <input type="file" id="dad-file-b" accept="image/*" style="display:none" onchange="loadParentB('dad',this)">
           <div class="parent-photo-box" id="dad-photo-box-b">
             <div class="parent-upload-area admin-only" id="dad-upload-area-b" onclick="document.getElementById('dad-file-b').click()">
-              <span style="font-size:2.5rem; display:block; margin-bottom:10px;">🐀</span>
-              <p>Upload Dad's Photo</p>
+              <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Dad's Photo</p>
             </div>
             <img id="dad-img-b" class="parent-photo" style="display:none">
           </div>
@@ -3459,8 +1607,8 @@
             <div class="parent-edit-fields" id="dad-edit-b" style="display:none">
               <input type="text" id="dad-name-input-b" placeholder="Dad's name">
               <textarea id="dad-desc-input-b" placeholder="Variety, temperament, health notes..."></textarea>
-              <div style="display:flex; gap:8px; margin-top:8px;">
-                <button class="btn-add" style="padding:8px 20px; margin-top:0" onclick="saveParentB('dad')">Save</button>
+              <div style="display:flex;gap:8px;margin-top:8px;">
+                <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParentB('dad')">Save</button>
                 <button class="btn-modal-cancel" onclick="cancelParentB('dad')">Cancel</button>
               </div>
             </div>
@@ -3471,18 +1619,15 @@
     </div>
   </div>
 
-  <!-- About Our Home -->
-  <div style="margin-top: 60px;">
+  <div style="margin-top:60px;">
     <div id="about-header">
       <h2 class="section-title" id="title-about" onclick="editSectionTitle(this)" title="">About Our Home</h2>
       <button id="edit-btn" onclick="toggleEdit()" class="admin-only-inline" style="display:none">✏️ Edit</button>
     </div>
     <section id="about-section">
       <div id="about-inner">
-        <div id="about-display" class="rich-editor-display">
-          
-        </div>
-        <input type="file" accept="image/*" multiple class="rich-file-input" id="about-img-input" onchange="insertImagesInEditor('about-editor', this)">
+        <div id="about-display" class="rich-editor-display"></div>
+        <input type="file" accept="image/*" multiple class="rich-file-input" id="about-img-input" onchange="insertImagesInEditor('about-editor',this)">
         <div id="about-editor-wrap" style="display:none">
           <div class="rich-editor-toolbar">
             <button onclick="execCmd('bold')"><b>B</b></button>
@@ -3490,56 +1635,50 @@
             <button onclick="execCmd('underline')"><u>U</u></button>
             <button onclick="insertLinkInEditor('about-editor')">🔗 Link</button>
             <button onclick="document.getElementById('about-img-input').click()">📷 Image</button>
-            <button onclick="execCmd('removeFormat')">Clear</button>
           </div>
-          <div id="about-editor" class="rich-editor-body" contenteditable="true" data-placeholder="Tell people about yourself — how long you've been breeding, how you care for your rats, what makes your rattery special..."></div>
+          <div id="about-editor" class="rich-editor" contenteditable="true"></div>
         </div>
-        <div id="about-actions">
-          <button id="save-btn" onclick="saveAbout()">Save</button>
-          <button id="cancel-btn" onclick="cancelEdit()">Cancel</button>
+        <div id="about-actions" style="display:none; gap:10px; margin-top:12px;">
+          <button class="btn-add" style="margin-top:0;padding:8px 20px" onclick="saveAbout()">Save</button>
+          <button class="btn-modal-cancel" onclick="cancelEdit()">Cancel</button>
         </div>
       </div>
     </section>
   </div>
+</main>
+
+<section id="subscribe-section">
+  <h2 id="sub-title" onclick="if(isAdmin) editSubField('sub-title','sub-title-input')" style="">Stay in the Loop 🐀</h2>
+  <input id="sub-title-input" type="text" onblur="saveSubField('sub-title','sub-title-input')" onkeydown="if(event.key==='Enter') this.blur()" style="display:none; font-family:'Calibri','Candara',sans-serif; font-size:2rem; color:var(--cream); background:transparent; border:none; border-bottom:2px solid var(--gold); outline:none; text-align:center; width:100%; margin-bottom:8px;">
+  <p id="sub-tagline" onclick="if(isAdmin) editSubField('sub-tagline','sub-tagline-input')" style="">Sign up to hear about new litters before anyone else</p>
+  <input id="sub-tagline-input" type="text" onblur="saveSubField('sub-tagline','sub-tagline-input')" onkeydown="if(event.key==='Enter') this.blur()" style="display:none; font-family:'Calibri','Candara',sans-serif; font-size:0.95rem; color:#c4a98a; background:transparent; border:none; border-bottom:2px solid var(--gold); outline:none; text-align:center; width:100%; margin-bottom:28px;">
+  <div class="subscribe-form">
+    <input type="email" id="sub-email" placeholder="Your email address" onkeydown="if(event.key==='Enter') submitSubscribe()">
+    <button onclick="submitSubscribe()">Notify Me</button>
+  </div>
+  <div class="subscribe-success" id="sub-success">You're on the list! We'll be in touch 🐀</div>
+</section>
 
 <div class="modal-overlay" id="edit-modal" onclick="closeEditModal(event)">
-  <div class="modal" style="max-width:500px">
-    <h3 style="margin-bottom:18px">Edit Listing</h3>
-    <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:16px; flex-wrap:wrap">
-      <div style="position:relative; flex-shrink:0">
-        <img id="edit-preview" style="width:110px; height:110px; object-fit:cover; border-radius:10px; border:3px solid var(--warm); display:block; margin-bottom:6px">
-        <div class="img-thumb-row" id="edit-thumb-row" style="flex-wrap:wrap; gap:5px"></div>
-        <button onclick="document.getElementById('edit-file-input').click()" style="margin-top:6px; background:rgba(255,255,255,0.9); border:1px solid #e8d9c8; border-radius:6px; font-size:0.75rem; padding:4px 8px; cursor:pointer; color:var(--rust); font-weight:500; width:100%">📷 Add photos</button>
-        <input type="file" id="edit-file-input" accept="image/*" style="display:none" onchange="swapEditImage(this)" multiple>
-      </div>
-      <div style="flex:1; min-width:160px; text-align:left">
-
-      </div>
-    </div>
-    <label style="display:block; text-align:left; font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--rust); margin-bottom:4px">Description</label>
-    <textarea id="edit-desc" style="width:100%; padding:9px 12px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.92rem; background:var(--cream); outline:none; resize:vertical; min-height:80px; margin-bottom:12px"></textarea>
-    <div style="display:flex; gap:12px; margin-bottom:18px">
-      <div style="flex:1; text-align:left">
-        <label style="display:block; font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--rust); margin-bottom:4px">Price ($)</label>
-        <input type="number" id="edit-price" min="0" style="width:100%; padding:8px 12px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.92rem; background:var(--cream); outline:none">
-      </div>
-      <div style="flex:1; text-align:left">
-        <label style="display:block; font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--rust); margin-bottom:4px">Sex</label>
-        <select id="edit-sex" style="width:100%; padding:8px 12px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.92rem; background:var(--cream); outline:none; cursor:pointer">
-          <option value="">Select...</option>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-        </select>
-      </div>
-      <div style="flex:1; text-align:left">
-        <label style="display:block; font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--rust); margin-bottom:4px">Status</label>
-        <select id="edit-sold" style="width:100%; padding:8px 12px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.92rem; background:var(--cream); outline:none; cursor:pointer">
-          <option value="available">Available</option>
-          <option value="pending">Pending</option>
-          <option value="sold">Sold</option>
+  <div class="modal">
+    <h3>Edit Listing</h3>
+    <img id="edit-preview" style="width:110px;height:110px;object-fit:cover;border-radius:10px;border:3px solid var(--warm);display:block;margin-bottom:6px">
+    <div class="img-thumb-row" id="edit-thumb-row" style="margin-bottom:12px"></div>
+    <input type="file" id="edit-file-input" accept="image/*" style="display:none" onchange="swapEditImage(this)" multiple>
+    <label>Description</label>
+    <textarea id="edit-desc" style="width:100%;padding:10px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;background:var(--cream);outline:none;resize:vertical;min-height:80px;margin-bottom:12px;"></textarea>
+    <div class="form-row" style="margin-bottom:12px">
+      <div><label>Price ($)</label><input type="number" id="edit-price" min="0" style="width:100%;padding:10px 14px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;background:var(--cream);outline:none;"></div>
+      <div><label>Sex</label>
+        <select id="edit-sex" style="width:100%;padding:10px 14px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;color:var(--dark);background:var(--cream);outline:none;cursor:pointer">
+          <option value="">Select...</option><option value="Female">Female</option><option value="Male">Male</option>
         </select>
       </div>
     </div>
+    <label>Status</label>
+    <select id="edit-sold" style="width:100%;padding:10px 14px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;color:var(--dark);background:var(--cream);outline:none;cursor:pointer;margin-bottom:20px;">
+      <option value="available">Available</option><option value="pending">Pending</option><option value="sold">Sold</option>
+    </select>
     <div class="modal-btns">
       <button class="btn-modal-send" onclick="saveEdit()">Save Changes</button>
       <button class="btn-modal-cancel" onclick="document.getElementById('edit-modal').classList.remove('open')">Cancel</button>
@@ -3550,7 +1689,7 @@
 <div class="modal-overlay" id="modal" onclick="closeModal(event)">
   <div class="modal">
     <h3>Interested in <span id="modal-rat-name"></span>?</h3>
-    <p>Leave your name and email and the seller will reach out to you!</p>
+    <p>Leave your name and email and we will reach out to you!</p>
     <input type="text" id="modal-buyer-name" placeholder="Your name">
     <input type="email" id="modal-email" placeholder="Your email address">
     <div class="modal-btns">
@@ -3560,28 +1699,7 @@
   </div>
 </div>
 
-<div style="height: 60px;"></div>
-<div style="max-width:1200px; margin:0 auto; padding: 0 24px;">
-<section id="subscribe-section">
-  <h2 id="sub-title" onclick="if(isAdmin) editSubField('sub-title','sub-title-input')" title="" style="">Stay in the Loop 🐀</h2>
-  <input id="sub-title-input" type="text" onblur="saveSubField('sub-title','sub-title-input')" onkeydown="if(event.key==='Enter') this.blur()" style="display:none; font-family:'Calibri','Candara',sans-serif; font-size:2rem; color:var(--cream); background:transparent; border:none; border-bottom:2px solid var(--gold); outline:none; text-align:center; width:100%; margin-bottom:8px; position:relative;">
-  <p id="sub-tagline" onclick="if(isAdmin) editSubField('sub-tagline','sub-tagline-input')" title="" style="">Sign up to hear about new litters before anyone else</p>
-  <input id="sub-tagline-input" type="text" onblur="saveSubField('sub-tagline','sub-tagline-input')" onkeydown="if(event.key==='Enter') this.blur()" style="display:none; font-family:'Calibri','Candara',sans-serif; font-style:normal; font-size:0.95rem; color:#c4a98a; background:transparent; border:none; border-bottom:2px solid var(--gold); outline:none; text-align:center; width:100%; margin-bottom:28px; position:relative;">
-  <div class="subscribe-form">
-    <input type="email" id="sub-email" placeholder="Your email address" onkeydown="if(event.key==='Enter') submitSubscribe()">
-    <button onclick="submitSubscribe()">Notify Me</button>
-  </div>
-  <div class="subscribe-success" id="sub-success">You're on the list! We'll be in touch 🐀</div>
-</section>
-</div>
-
-
-
-
-<div id="admin-toggle" onclick="toggleAdminMode()">
-  <div class="toggle-switch"><div class="toggle-knob"></div></div>
-  <span class="toggle-label" id="toggle-label">Visitor View</span>
-</div>
+<div id="secret-trigger" onclick="secretClick()"></div>
 
 <div id="admin-login-modal">
   <div id="admin-login-box">
@@ -3590,36 +1708,13 @@
     <input type="password" id="admin-password-input" placeholder="Password" onkeydown="if(event.key==='Enter') checkPassword()">
     <div id="admin-login-error">Incorrect password. Try again.</div>
     <button class="btn-modal-send" onclick="checkPassword()" style="width:100%">Login</button>
-    <button class="btn-modal-cancel" onclick="document.getElementById('admin-login-modal').classList.remove('open')" style="margin-top:8px; width:100%">Cancel</button>
+    <button class="btn-modal-cancel" onclick="document.getElementById('admin-login-modal').classList.remove('open')" style="margin-top:8px;width:100%">Cancel</button>
   </div>
 </div>
-
-
-<div class="modal-overlay" id="modal" onclick="closeModal(event)">
-  <div class="modal">
-    <h3>Interested in <span id="modal-rat-name"></span>?</h3>
-    <p>Leave your name and email and the seller will reach out to you!</p>
-    <input type="text" id="modal-buyer-name" placeholder="Your name">
-    <input type="email" id="modal-email" placeholder="Your email address">
-    <div class="modal-btns">
-      <button class="btn-modal-send" onclick="submitInquiry()">Send Inquiry 💌</button>
-      <button class="btn-modal-cancel" onclick="document.getElementById('modal').classList.remove('open')">Cancel</button>
-    </div>
-  </div>
-</div>
-
-<div style="height: 60px;"></div>
-<div style="max-width:1200px; margin:0 auto; padding: 0 24px;">
-</div>
-
-
-
-
 
 <script>
   function hasPrice(p) { return p !== '' && p !== null && p !== undefined && !isNaN(parseFloat(p)); }
 
-  // ── SAFE DB CALLER ─────────────────────────────────────────────────────────
   function dbCall(fnName) {
     var args = Array.prototype.slice.call(arguments, 1);
     return new Promise(function(resolve, reject) {
@@ -3636,17 +1731,13 @@
     });
   }
 
-  // ── RICH EDITOR ────────────────────────────────────────────────────────────
   function execCmd(cmd) { document.execCommand(cmd, false, null); }
-
-  function insertLinkInEditor(editorId) {
-    var url = prompt('Enter URL (include https://:');
-    if (!url) return;
+  function insertLinkInEditor(id) {
+    var url = prompt('Enter URL:'); if (!url) return;
     var text = prompt('Link text:', url);
-    document.getElementById(editorId).focus();
-    document.execCommand('insertHTML', false, '<a href="' + url + '" target="_blank">' + (text || url) + '</a>');
+    document.getElementById(id).focus();
+    document.execCommand('insertHTML', false, '<a href="' + url + '" target="_blank">' + (text||url) + '</a>');
   }
-
   function insertImagesInEditor(editorId, input) {
     var files = Array.from(input.files);
     var editor = document.getElementById(editorId);
@@ -3661,35 +1752,28 @@
     input.value = '';
   }
 
-  // ── ABOUT SECTION ──────────────────────────────────────────────────────────
   var editing = false;
-
   function toggleEdit() {
     editing = true;
     var editor = document.getElementById('about-editor');
     var display = document.getElementById('about-display');
-    editor.innerHTML = display.innerHTML.includes('about-placeholder') ? '' : display.innerHTML;
+    editor.innerHTML = display.innerHTML || '';
     display.style.display = 'none';
     document.getElementById('about-editor-wrap').style.display = 'block';
     document.getElementById('about-actions').style.display = 'flex';
     document.getElementById('edit-btn').style.display = 'none';
     editor.focus();
   }
-
   function saveAbout() {
     var html = document.getElementById('about-editor').innerHTML.trim();
     var display = document.getElementById('about-display');
     if (html && html !== '<br>') {
       display.innerHTML = html;
-      dbCall('db_saveAbout', html).catch(function(e) { console.error('About save error:', e); });
-    } else {
-      display.innerHTML = '';
-    }
+      dbCall('db_saveAbout', html).catch(function(e) { console.error(e); });
+    } else { display.innerHTML = ''; }
     closeEdit();
   }
-
   function cancelEdit() { closeEdit(); }
-
   function closeEdit() {
     document.getElementById('about-display').style.display = 'block';
     document.getElementById('about-editor-wrap').style.display = 'none';
@@ -3698,20 +1782,14 @@
     editing = false;
   }
 
-  // ── RAT LISTINGS ───────────────────────────────────────────────────────────
   var rats = [];
   var pendingImages = [];
-
   var fileInput = document.getElementById('file-input');
   var addForm = document.getElementById('add-form');
-
   if (fileInput) fileInput.addEventListener('change', function() {
     var files = Array.from(this.files);
     if (!files.length) return;
-    var fileIndex = 0;
-    function processNext() {
-      if (fileIndex >= files.length) return;
-      var file = files[fileIndex++];
+    files.forEach(function(file) {
       var reader = new FileReader();
       reader.onload = function(e) {
         pendingImages.push(e.target.result);
@@ -3720,39 +1798,31 @@
           addForm.classList.add('visible');
           addForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
-        processNext();
       };
       reader.readAsDataURL(file);
-    }
-    processNext();
+    });
     this.value = '';
   });
-
   function renderFormThumbs() {
     var row = document.getElementById('form-thumb-row');
     row.innerHTML = pendingImages.map(function(img, i) {
-      return '<div class="img-thumb-wrap"><img src="' + img + '" alt="photo ' + (i+1) + '"><button class="remove-img" onclick="removeFormImg(' + i + ')">✕</button></div>';
-    }).join('') + '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input\').click()" title="Add more photos">+</div>';
+      return '<div class="img-thumb-wrap"><img src="' + img + '" alt="photo"><button class="remove-img" onclick="removeFormImg(' + i + ')">\u2715</button></div>';
+    }).join('') + '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input\').click()" title="Add more">+</div>';
   }
-
   function removeFormImg(idx) {
     pendingImages.splice(idx, 1);
     if (pendingImages.length === 0) addForm.classList.remove('visible');
     renderFormThumbs();
   }
-
   function triggerUpload() { fileInput.click(); }
-
   function cancelAdd() {
-    pendingImages = [];
-    fileInput.value = '';
+    pendingImages = []; fileInput.value = '';
     document.getElementById('input-desc').value = '';
     document.getElementById('input-price').value = '';
     document.getElementById('input-sex').value = '';
     document.getElementById('form-thumb-row').innerHTML = '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input\').click()" title="Add photo">+</div>';
     addForm.classList.remove('visible');
   }
-
   function addRat() {
     var desc = document.getElementById('input-desc').value.trim();
     var price = document.getElementById('input-price').value;
@@ -3762,69 +1832,32 @@
     rats.push(rat);
     cancelAdd();
     renderGrid();
-    setTimeout(attachRatSwipes, 50);
-    dbCall('db_saveRat', rat).then(function(savedRat) {
+    dbCall('db_saveRat', rat).then(function(saved) {
       var idx = rats.findIndex(function(r) { return r.id === rat.id; });
-      if (idx !== -1) rats[idx] = savedRat;
-    }).catch(function(e) { console.error('Save rat error:', e); });
+      if (idx !== -1) rats[idx] = saved;
+    }).catch(function(e) { console.error(e); });
   }
-
   function renderGrid() {
     var grid = document.getElementById('rat-grid');
+    if (!grid) return;
     if (rats.length === 0) {
-      var emptyMsg = isAdmin
-        ? 'No rats listed yet — click "+ Add Rat" to add your first!'
-        : 'We are caring for our expecting mother for now. More rats will be looking for homes soon!';
-      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">🐀</span><p>' + emptyMsg + '</p></div>';
+      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">\U0001f400</span><p>' + (isAdmin ? 'No rats listed yet.' : 'More rats coming soon!') + '</p></div>';
       return;
     }
     grid.innerHTML = rats.map(function(r, i) {
       var imgs = (r.images || [r.image]).filter(Boolean);
-      var carousel = '<div class="carousel" id="carousel-' + r.id + '">'
-        + '<div class="carousel-track" id="track-' + r.id + '">'
-        + imgs.map(function(img) { return '<img src="' + img + '" alt="rat">'; }).join('')
-        + '</div>'
-        + (imgs.length > 1
-          ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">‹</button>'
-          + '<button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">›</button>'
-          + '<div class="carousel-dots" id="dots-' + r.id + '">'
-          + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('')
-          + '</div>'
-          : '')
-        + '</div>';
-      var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">'
-        + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
-      var adminBtns = isAdmin
-        ? '<button class="btn-delete admin-only" onclick="deleteRat(' + r.id + ')">✕</button>'
-          + '<button class="btn-edit-listing admin-only" onclick="openEditModal(' + r.id + ')">✏️</button>'
-        : '';
-      var body = '<div class="rat-card-body">'
-        + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '')
-        + (r.variety ? '<div class="rat-variety">' + r.variety + (r.sex?' · '+r.sex:'') + '</div>' : (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : ''))
-        + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '')
-        + '<div class="rat-footer"><span class="rat-price">' + (hasPrice(r.price) ? '$'+parseFloat(r.price).toFixed(2) : 'Ask for price') + '</span></div>'
-        + '</div>';
+      var carousel = '<div class="carousel" id="carousel-' + r.id + '"><div class="carousel-track" id="track-' + r.id + '">' + imgs.map(function(img) { return '<img src="' + img + '" alt="rat">'; }).join('') + '</div>'
+        + (imgs.length > 1 ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">\u2039</button><button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">\u203a</button><div class="carousel-dots" id="dots-' + r.id + '">' + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('') + '</div>' : '') + '</div>';
+      var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">' + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
+      var adminBtns = isAdmin ? '<button class="btn-delete admin-only" onclick="deleteRat(' + r.id + ')">\u2715</button><button class="btn-edit-listing admin-only" onclick="openEditModal(' + r.id + ')">\u270f\ufe0f</button>' : '';
+      var body = '<div class="rat-card-body">' + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '') + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '') + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '') + '<div class="rat-footer"><span class="rat-price">' + (hasPrice(r.price) ? '$' + parseFloat(r.price).toFixed(2) : 'Ask for price') + '</span></div></div>';
       return '<div class="rat-card" style="animation-delay:' + (i*0.05) + 's">' + carousel + badge + adminBtns + body + '</div>';
     }).join('');
   }
-
-  function attachRatSwipes() {
-    rats.forEach(function(r) {
-      var el = document.getElementById('carousel-' + r.id);
-      if (!el || el._swipe) return;
-      el._swipe = true;
-      addSwipeSupport(el,
-        function() { slideCarousel(r.id, 1, { stopPropagation: function(){} }); },
-        function() { slideCarousel(r.id, -1, { stopPropagation: function(){} }); }
-      );
-    });
-  }
-
   var carouselIndex = {};
-
   function slideCarousel(id, dir, e) {
     if (e && e.stopPropagation) e.stopPropagation();
-    var rat = rats.find(function(r) { return r.id === id; });
+    var rat = rats.find(function(r) { return r.id === id; }) || ratsB.find(function(r) { return r.id === id; });
     if (!rat) return;
     var imgs = (rat.images || [rat.image]).filter(Boolean);
     if (carouselIndex[id] === undefined) carouselIndex[id] = 0;
@@ -3836,22 +1869,21 @@
       if (dot) dot.classList.toggle('active', i === carouselIndex[id]);
     });
   }
-
   function deleteRat(id) {
     if (confirm('Remove this listing?')) {
       rats = rats.filter(function(r) { return r.id !== id; });
       renderGrid();
-      setTimeout(attachRatSwipes, 50);
-      dbCall('db_deleteRat', id).catch(function(e) { console.error('Delete error:', e); });
+      dbCall('db_deleteRat', id).catch(function(e) { console.error(e); });
     }
   }
 
-  // ── EDIT MODAL ─────────────────────────────────────────────────────────────
   var editingId = null;
   var editPendingImages = [];
-
+  var editingLitterB = false;
   function openEditModal(id) {
     var r = rats.find(function(x) { return x.id === id; });
+    editingLitterB = false;
+    if (!r) { r = ratsB.find(function(x) { return x.id === id; }); editingLitterB = true; }
     if (!r) return;
     editingId = id;
     editPendingImages = (r.images || [r.image]).filter(Boolean).slice();
@@ -3862,123 +1894,82 @@
     document.getElementById('edit-sold').value = r.status || 'available';
     document.getElementById('edit-modal').classList.add('open');
   }
-
   function closeEditModal(e) {
-    if (e.target === document.getElementById('edit-modal'))
-      document.getElementById('edit-modal').classList.remove('open');
+    if (e.target === document.getElementById('edit-modal')) document.getElementById('edit-modal').classList.remove('open');
   }
-
   function swapEditImage(input) {
     var files = Array.from(input.files);
-    var fileIndex = 0;
-    function processNext() {
-      if (fileIndex >= files.length) return;
-      var file = files[fileIndex++];
+    files.forEach(function(file) {
       var reader = new FileReader();
-      reader.onload = function(e) {
-        editPendingImages.push(e.target.result);
-        renderEditThumbs();
-        processNext();
-      };
+      reader.onload = function(e) { editPendingImages.push(e.target.result); renderEditThumbs(); };
       reader.readAsDataURL(file);
-    }
-    processNext();
+    });
     input.value = '';
   }
-
-  function removeEditImg(idx) {
-    editPendingImages.splice(idx, 1);
-    renderEditThumbs();
-  }
-
+  function removeEditImg(idx) { editPendingImages.splice(idx, 1); renderEditThumbs(); }
   function renderEditThumbs() {
     var preview = document.getElementById('edit-preview');
     if (preview) preview.src = editPendingImages[0] || '';
     var thumbRow = document.getElementById('edit-thumb-row');
     if (!thumbRow) return;
     thumbRow.innerHTML = editPendingImages.map(function(img, i) {
-      return '<div class="img-thumb-wrap" style="width:52px;height:52px"><img src="' + img + '" alt="photo ' + (i+1) + '"><button class="remove-img" onclick="removeEditImg(' + i + ')">✕</button></div>';
+      return '<div class="img-thumb-wrap" style="width:52px;height:52px"><img src="' + img + '" alt="photo"><button class="remove-img" onclick="removeEditImg(' + i + ')">\u2715</button></div>';
     }).join('') + '<div class="img-thumb-wrap add-more" style="width:52px;height:52px" onclick="document.getElementById(\'edit-file-input\').click()">+</div>';
   }
-
   function saveEdit() {
-    var idx = rats.findIndex(function(x) { return x.id === editingId; });
+    var arr = editingLitterB ? ratsB : rats;
+    var idx = arr.findIndex(function(x) { return x.id === editingId; });
     if (idx === -1) return;
-    rats[idx].desc = document.getElementById('edit-desc').value.trim();
-    rats[idx].price = document.getElementById('edit-price').value;
-    rats[idx].sex = document.getElementById('edit-sex').value.trim();
-    rats[idx].status = document.getElementById('edit-sold').value;
-    rats[idx].images = editPendingImages.slice();
+    arr[idx].desc = document.getElementById('edit-desc').value.trim();
+    arr[idx].price = document.getElementById('edit-price').value;
+    arr[idx].sex = document.getElementById('edit-sex').value.trim();
+    arr[idx].status = document.getElementById('edit-sold').value;
+    arr[idx].images = editPendingImages.slice();
     document.getElementById('edit-modal').classList.remove('open');
-    renderGrid();
-    setTimeout(attachRatSwipes, 50);
-    dbCall('db_saveRat', rats[idx]).catch(function(e) { console.error('Save error:', e); });
+    if (editingLitterB) renderGridB(); else renderGrid();
+    dbCall('db_saveRat', arr[idx]).catch(function(e) { console.error(e); });
   }
 
-  // ── INQUIRY MODAL ──────────────────────────────────────────────────────────
-  function openModal(name, id) {
+  function openModal(name) {
     document.getElementById('modal-rat-name').textContent = name;
     document.getElementById('modal-buyer-name').value = '';
     document.getElementById('modal-email').value = '';
     document.getElementById('modal').classList.add('open');
   }
-
   function closeModal(e) {
-    if (e.target === document.getElementById('modal'))
-      document.getElementById('modal').classList.remove('open');
+    if (e.target === document.getElementById('modal')) document.getElementById('modal').classList.remove('open');
   }
-
   function submitInquiry() {
     var name = document.getElementById('modal-buyer-name').value.trim();
     var email = document.getElementById('modal-email').value.trim();
     var ratName = document.getElementById('modal-rat-name').textContent;
     if (!name || !email) return alert('Please fill in your name and email!');
     var subject = encodeURIComponent('Inquiry about ' + ratName + ' - 518 Baby Rats');
-    var body = encodeURIComponent('Hi,\\n\\nMy name is ' + name + ' and I am interested in ' + ratName + '.\\n\\nPlease contact me at: ' + email + '\\n\\nThank you!');
-    alert('Thanks ' + name + '! Your email app will open to send your inquiry. We will get back to you soon! 🐀');
+    var body = encodeURIComponent('Hi,\n\nMy name is ' + name + ' and I am interested in ' + ratName + '.\n\nPlease contact me at: ' + email + '\n\nThank you!');
+    alert('Thanks ' + name + '! Your email app will open. We will get back to you soon!');
     document.getElementById('modal').classList.remove('open');
     setTimeout(function() { window.location.href = 'mailto:518babyrats@gmail.com?subject=' + subject + '&body=' + body; }, 300);
   }
 
-  // ── TOUCH SWIPE ────────────────────────────────────────────────────────────
-  function addSwipeSupport(el, onSwipeLeft, onSwipeRight) {
-    var startX = null;
-    el.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
-    el.addEventListener('touchend', function(e) {
-      if (startX === null) return;
-      var diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) { if (diff > 0) onSwipeLeft(); else onSwipeRight(); }
-      startX = null;
-    }, { passive: true });
-  }
-
-  // ── PARENTS ────────────────────────────────────────────────────────────────
   var parentData = { mom: { name: '', desc: '' }, dad: { name: '', desc: '' } };
-
   function loadParent(who, input) {
-    var file = input.files[0];
-    if (!file) return;
+    var file = input.files[0]; if (!file) return;
     var reader = new FileReader();
     reader.onload = function(e) {
       var img = document.getElementById(who + '-img');
-      img.src = e.target.result;
-      img.style.display = 'block';
+      img.src = e.target.result; img.style.display = 'block';
       document.getElementById(who + '-upload-area').style.display = 'none';
-      // Save to DB
       dbCall('db_saveParent', who, parentData[who], [e.target.result]).then(function(urls) {
         if (urls && urls[0]) img.src = urls[0];
-      }).catch(function(e) { console.error('Parent save error:', e); });
+      }).catch(function(e) { console.error(e); });
     };
-    reader.readAsDataURL(file);
-    input.value = '';
+    reader.readAsDataURL(file); input.value = '';
   }
-
   function editParent(who) {
     document.getElementById(who + '-name-input').value = parentData[who].name;
     document.getElementById(who + '-desc-input').value = parentData[who].desc;
     document.getElementById(who + '-edit').style.display = 'block';
   }
-
   function saveParent(who) {
     parentData[who].name = document.getElementById(who + '-name-input').value.trim() || (who==='mom'?'Mom':'Dad');
     parentData[who].desc = document.getElementById(who + '-desc-input').value.trim();
@@ -3986,22 +1977,14 @@
     document.getElementById(who + '-desc-display').textContent = parentData[who].desc || '';
     document.getElementById(who + '-edit').style.display = 'none';
     var img = document.getElementById(who + '-img');
-    var imgs = img.src ? [img.src] : [];
-    dbCall('db_saveParent', who, parentData[who], imgs).catch(function(e) { console.error('Parent save error:', e); });
+    dbCall('db_saveParent', who, parentData[who], img.src ? [img.src] : []).catch(function(e) { console.error(e); });
   }
+  function cancelParent(who) { document.getElementById(who + '-edit').style.display = 'none'; }
 
-  function cancelParent(who) {
-    document.getElementById(who + '-edit').style.display = 'none';
-  }
-
-
-  // ── LITTER B: RAT LISTINGS ─────────────────────────────────────────────────
   var ratsB = [];
   var pendingImagesB = [];
-
   var fileInputB = document.getElementById('file-input-b');
   var addFormB = document.getElementById('add-form-b');
-
   if (fileInputB) fileInputB.addEventListener('change', function() {
     var files = Array.from(this.files);
     if (!files.length) return;
@@ -4010,41 +1993,28 @@
       reader.onload = function(e) {
         pendingImagesB.push(e.target.result);
         renderFormThumbsB();
-        if (pendingImagesB.length === 1) {
-          addFormB.classList.add('visible');
-          addFormB.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+        if (pendingImagesB.length === 1) { addFormB.classList.add('visible'); addFormB.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
       };
       reader.readAsDataURL(file);
     });
     this.value = '';
   });
-
   function renderFormThumbsB() {
     var row = document.getElementById('form-thumb-row-b');
     row.innerHTML = pendingImagesB.map(function(img, i) {
-      return '<div class="img-thumb-wrap"><img src="' + img + '" alt="photo ' + (i+1) + '"><button class="remove-img" onclick="removeFormImgB(' + i + ')">✕</button></div>';
-    }).join('') + '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input-b\').click()" title="Add more photos">+</div>';
+      return '<div class="img-thumb-wrap"><img src="' + img + '" alt="photo"><button class="remove-img" onclick="removeFormImgB(' + i + ')">\u2715</button></div>';
+    }).join('') + '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input-b\').click()" title="Add more">+</div>';
   }
-
-  function removeFormImgB(idx) {
-    pendingImagesB.splice(idx, 1);
-    if (pendingImagesB.length === 0) addFormB.classList.remove('visible');
-    renderFormThumbsB();
-  }
-
+  function removeFormImgB(idx) { pendingImagesB.splice(idx, 1); if (!pendingImagesB.length) addFormB.classList.remove('visible'); renderFormThumbsB(); }
   function triggerUploadB() { fileInputB.click(); }
-
   function cancelAddB() {
-    pendingImagesB = [];
-    fileInputB.value = '';
+    pendingImagesB = []; fileInputB.value = '';
     document.getElementById('input-desc-b').value = '';
     document.getElementById('input-price-b').value = '';
     document.getElementById('input-sex-b').value = '';
     document.getElementById('form-thumb-row-b').innerHTML = '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input-b\').click()" title="Add photo">+</div>';
     addFormB.classList.remove('visible');
   }
-
   function addRatB() {
     var desc = document.getElementById('input-desc-b').value.trim();
     var price = document.getElementById('input-price-b').value;
@@ -4054,115 +2024,52 @@
     ratsB.push(rat);
     cancelAddB();
     renderGridB();
-    dbCall('db_saveRat', rat).catch(function(e) { console.error('Save rat B error:', e); });
+    dbCall('db_saveRat', rat).catch(function(e) { console.error(e); });
   }
-
   function renderGridB() {
     var grid = document.getElementById('rat-grid-b');
+    if (!grid) return;
     if (ratsB.length === 0) {
-      var emptyMsg = isAdmin
-        ? 'No rats listed yet — click "+ Add Rat" to add your first!'
-        : 'We are caring for our expecting mother for now. More rats will be looking for homes soon!';
-      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">🐀</span><p>' + emptyMsg + '</p></div>';
+      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">\U0001f400</span><p>' + (isAdmin ? 'No rats listed yet.' : 'More rats coming soon!') + '</p></div>';
       return;
     }
     grid.innerHTML = ratsB.map(function(r, i) {
       var imgs = (r.images || [r.image]).filter(Boolean);
-      var carousel = '<div class="carousel" id="carousel-' + r.id + '">'
-        + '<div class="carousel-track" id="track-' + r.id + '">'
-        + imgs.map(function(img) { return '<img src="' + img + '" alt="rat">'; }).join('')
-        + '</div>'
-        + (imgs.length > 1
-          ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">‹</button>'
-            + '<button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">›</button>'
-            + '<div class="carousel-dots" id="dots-' + r.id + '">'
-            + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('')
-            + '</div>'
-          : '')
-        + '</div>';
-      var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">'
-        + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
-      var adminBtns = isAdmin
-        ? '<button class="btn-delete admin-only" onclick="deleteRatB(' + r.id + ')">✕</button>'
-          + '<button class="btn-edit-listing admin-only" onclick="openEditModalB(' + r.id + ')">✏️</button>'
-        : '';
-      var body = '<div class="rat-card-body">'
-        + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '')
-        + (r.variety ? '<div class="rat-variety">' + r.variety + (r.sex?' · '+r.sex:'') + '</div>' : (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : ''))
-        + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '')
-        + '<div class="rat-footer"><span class="rat-price">' + (hasPrice(r.price) ? '$'+parseFloat(r.price).toFixed(2) : 'Ask for price') + '</span></div>'
-        + '</div>';
+      var carousel = '<div class="carousel" id="carousel-' + r.id + '"><div class="carousel-track" id="track-' + r.id + '">' + imgs.map(function(img) { return '<img src="' + img + '" alt="rat">'; }).join('') + '</div>'
+        + (imgs.length > 1 ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">\u2039</button><button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">\u203a</button><div class="carousel-dots" id="dots-' + r.id + '">' + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('') + '</div>' : '') + '</div>';
+      var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">' + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
+      var adminBtns = isAdmin ? '<button class="btn-delete admin-only" onclick="deleteRatB(' + r.id + ')">\u2715</button><button class="btn-edit-listing admin-only" onclick="openEditModal(' + r.id + ')">\u270f\ufe0f</button>' : '';
+      var body = '<div class="rat-card-body">' + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '') + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '') + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '') + '<div class="rat-footer"><span class="rat-price">' + (hasPrice(r.price) ? '$' + parseFloat(r.price).toFixed(2) : 'Ask for price') + '</span></div></div>';
       return '<div class="rat-card" style="animation-delay:' + (i*0.05) + 's">' + carousel + badge + adminBtns + body + '</div>';
     }).join('');
   }
-
   function deleteRatB(id) {
     if (confirm('Remove this listing?')) {
       ratsB = ratsB.filter(function(r) { return r.id !== id; });
       renderGridB();
-      dbCall('db_deleteRat', id).catch(function(e) { console.error('Delete B error:', e); });
+      dbCall('db_deleteRat', id).catch(function(e) { console.error(e); });
     }
   }
 
-  // ── LITTER B: EDIT MODAL ───────────────────────────────────────────────────
-  var editingIdB = null;
-  var editPendingImagesB = [];
-
-  function openEditModalB(id) {
-    var r = ratsB.find(function(x) { return x.id === id; });
-    if (!r) return;
-    editingIdB = id;
-    editPendingImagesB = (r.images || [r.image]).filter(Boolean).slice();
-    renderEditThumbsB();
-    document.getElementById('edit-desc').value = r.desc || '';
-    document.getElementById('edit-price').value = r.price || '';
-    document.getElementById('edit-sex').value = r.sex || '';
-    document.getElementById('edit-sold').value = r.status || 'available';
-    document.getElementById('edit-modal').classList.add('open');
-    document.getElementById('edit-modal').__litterB = true;
-  }
-
-  function renderEditThumbsB() {
-    var preview = document.getElementById('edit-preview');
-    if (preview) preview.src = editPendingImagesB[0] || '';
-    var thumbRow = document.getElementById('edit-thumb-row');
-    if (!thumbRow) return;
-    thumbRow.innerHTML = editPendingImagesB.map(function(img, i) {
-      return '<div class="img-thumb-wrap" style="width:52px;height:52px"><img src="' + img + '" alt="photo ' + (i+1) + '"><button class="remove-img" onclick="removeEditImgB(' + i + ')">✕</button></div>';
-    }).join('') + '<div class="img-thumb-wrap add-more" style="width:52px;height:52px" onclick="document.getElementById(\'edit-file-input\').click()">+</div>';
-  }
-
-  function removeEditImgB(idx) {
-    editPendingImagesB.splice(idx, 1);
-    renderEditThumbsB();
-  }
-
-  // ── LITTER B: PARENTS ──────────────────────────────────────────────────────
   var parentDataB = { mom: { name: '', desc: '' }, dad: { name: '', desc: '' } };
-
   function loadParentB(who, input) {
-    var file = input.files[0];
-    if (!file) return;
+    var file = input.files[0]; if (!file) return;
     var reader = new FileReader();
     reader.onload = function(e) {
       var img = document.getElementById(who + '-img-b');
-      img.src = e.target.result;
-      img.style.display = 'block';
+      img.src = e.target.result; img.style.display = 'block';
       document.getElementById(who + '-upload-area-b').style.display = 'none';
       dbCall('db_saveParent', who + 'b', parentDataB[who], [e.target.result]).then(function(urls) {
         if (urls && urls[0]) img.src = urls[0];
-      }).catch(function(e) { console.error('Parent B save error:', e); });
+      }).catch(function(e) { console.error(e); });
     };
-    reader.readAsDataURL(file);
-    input.value = '';
+    reader.readAsDataURL(file); input.value = '';
   }
-
   function editParentB(who) {
     document.getElementById(who + '-name-input-b').value = parentDataB[who].name;
     document.getElementById(who + '-desc-input-b').value = parentDataB[who].desc;
     document.getElementById(who + '-edit-b').style.display = 'block';
   }
-
   function saveParentB(who) {
     parentDataB[who].name = document.getElementById(who + '-name-input-b').value.trim() || (who==='mom'?'Mom':'Dad');
     parentDataB[who].desc = document.getElementById(who + '-desc-input-b').value.trim();
@@ -4170,127 +2077,74 @@
     document.getElementById(who + '-desc-display-b').textContent = parentDataB[who].desc || '';
     document.getElementById(who + '-edit-b').style.display = 'none';
     var img = document.getElementById(who + '-img-b');
-    var imgs = img.src ? [img.src] : [];
-    dbCall('db_saveParent', who + 'b', parentDataB[who], imgs).catch(function(e) { console.error('Parent B save error:', e); });
+    dbCall('db_saveParent', who + 'b', parentDataB[who], img.src ? [img.src] : []).catch(function(e) { console.error(e); });
   }
+  function cancelParentB(who) { document.getElementById(who + '-edit-b').style.display = 'none'; }
 
-  function cancelParentB(who) {
-    document.getElementById(who + '-edit-b').style.display = 'none';
-  }
-
-  // ── SUBSCRIBE ──────────────────────────────────────────────────────────────
   function submitSubscribe() {
     var email = document.getElementById('sub-email').value.trim();
-    if (!email || !email.includes('@')) {
-      document.getElementById('sub-email').style.borderLeft = '3px solid var(--rust)';
-      return;
-    }
+    if (!email || !email.includes('@')) { document.getElementById('sub-email').style.borderLeft = '3px solid var(--rust)'; return; }
     document.querySelector('.subscribe-form').style.display = 'none';
     document.getElementById('sub-success').style.display = 'block';
   }
 
-  // ── EDITABLE HEADINGS ──────────────────────────────────────────────────────
   function editHeaderField(displayId, inputId) {
-    var display = document.getElementById(displayId);
-    var input = document.getElementById(inputId);
-    input.value = display.textContent;
-    display.style.display = 'none';
-    input.style.display = 'block';
-    input.focus(); input.select();
+    var display = document.getElementById(displayId), input = document.getElementById(inputId);
+    input.value = display.textContent; display.style.display = 'none'; input.style.display = 'block'; input.focus(); input.select();
   }
-
   function saveHeaderField(displayId, inputId) {
-    var display = document.getElementById(displayId);
-    var input = document.getElementById(inputId);
+    var display = document.getElementById(displayId), input = document.getElementById(inputId);
     if (input.value.trim()) display.textContent = input.value.trim();
-    input.style.display = 'none';
-    display.style.display = '';
-    saveSiteTextToDb();
+    input.style.display = 'none'; display.style.display = ''; saveSiteTextToDb();
   }
-
   function editSubField(displayId, inputId) {
-    var display = document.getElementById(displayId);
-    var input = document.getElementById(inputId);
-    input.value = display.textContent;
-    display.style.display = 'none';
-    input.style.display = 'block';
-    input.focus(); input.select();
+    var display = document.getElementById(displayId), input = document.getElementById(inputId);
+    input.value = display.textContent; display.style.display = 'none'; input.style.display = 'block'; input.focus(); input.select();
   }
-
   function saveSubField(displayId, inputId) {
-    var display = document.getElementById(displayId);
-    var input = document.getElementById(inputId);
+    var display = document.getElementById(displayId), input = document.getElementById(inputId);
     if (input.value.trim()) display.textContent = input.value.trim();
-    input.style.display = 'none';
-    display.style.display = '';
-    saveSiteTextToDb();
+    input.style.display = 'none'; display.style.display = ''; saveSiteTextToDb();
   }
-
   function editSectionTitle(el) {
     if (!isAdmin) return;
-    el.contentEditable = 'true';
-    el.focus();
-    var range = document.createRange();
-    range.selectNodeContents(el);
-    range.collapse(false);
-    var sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-    el.onblur = function() {
-      el.contentEditable = 'false';
-      if (!el.textContent.trim()) el.textContent = 'Untitled';
-      saveSiteTextToDb();
-    };
+    el.contentEditable = 'true'; el.focus();
+    el.onblur = function() { el.contentEditable = 'false'; if (!el.textContent.trim()) el.textContent = 'Untitled'; saveSiteTextToDb(); };
     el.onkeydown = function(e) { if (e.key==='Enter') { e.preventDefault(); el.blur(); } };
   }
-
   function saveSiteTextToDb() {
     function txt(id) { var el = document.getElementById(id); return el ? el.textContent : ''; }
     dbCall('db_saveSiteText', {
-      title:           txt('site-title'),
-      tagline:         txt('site-tagline'),
-      subTitle:        txt('sub-title'),
-      subTagline:      txt('sub-tagline'),
-      titleAvailable:  txt('title-available'),
-      titleParents:    txt('title-parents'),
-      titleAbout:      txt('title-about'),
-      titleAvailableB: txt('title-available-b'),
-      titleParentsB:   txt('title-parents-b'),
-    }).catch(function(e) { console.error('Site text save error:', e); });
+      title: txt('site-title'), tagline: txt('site-tagline'),
+      subTitle: txt('sub-title'), subTagline: txt('sub-tagline'),
+      titleAvailable: txt('title-available'), titleParents: txt('title-parents'),
+      titleAbout: txt('title-about'), titleAvailableB: txt('title-available-b'), titleParentsB: txt('title-parents-b'),
+    }).catch(function(e) { console.error(e); });
   }
 
-  // ── ADMIN MODE ─────────────────────────────────────────────────────────────
   var isAdmin = false;
-
-  function toggleAdminMode() {
-    if (isAdmin) {
-      isAdmin = false;
-      document.body.classList.remove('admin-mode');
-      document.getElementById('toggle-label').textContent = 'Visitor View';
-      renderGrid();
-    } else {
-      isAdmin = true;
-      document.body.classList.add('admin-mode');
-      document.getElementById('toggle-label').textContent = 'Admin Mode';
-      renderGrid();
-    }
+  var secretClicks = 0, secretTimer = null;
+  function secretClick() {
+    secretClicks++;
+    clearTimeout(secretTimer);
+    if (secretClicks >= 5) {
+      secretClicks = 0;
+      if (isAdmin) { isAdmin = false; document.body.classList.remove('admin-mode'); renderGrid(); renderGridB(); }
+      else { openAdminLogin(); }
+    } else { secretTimer = setTimeout(function() { secretClicks = 0; }, 2000); }
   }
-
   function openAdminLogin() {
     document.getElementById('admin-password-input').value = '';
     document.getElementById('admin-login-error').style.display = 'none';
     document.getElementById('admin-login-modal').classList.add('open');
     setTimeout(function() { document.getElementById('admin-password-input').focus(); }, 100);
   }
-
   function checkPassword() {
     var input = document.getElementById('admin-password-input').value;
     if (input === 'Orochimaru1!') {
-      isAdmin = true;
-      document.body.classList.add('admin-mode');
+      isAdmin = true; document.body.classList.add('admin-mode');
       document.getElementById('admin-login-modal').classList.remove('open');
-      document.getElementById('toggle-label').textContent = 'Admin Mode';
-      renderGrid();
+      renderGrid(); renderGridB();
     } else {
       document.getElementById('admin-login-error').style.display = 'block';
       document.getElementById('admin-password-input').value = '';
@@ -4298,83 +2152,62 @@
     }
   }
 
-  // ── INIT FROM FIREBASE ─────────────────────────────────────────────────────
   function showLoading() {
-    document.getElementById('rat-grid').innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">🐀</span><p>Loading...</p></div>';
+    var g = document.getElementById('rat-grid');
+    if (g) g.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">\U0001f400</span><p>Loading...</p></div>';
   }
-
   async function initFromDb() {
     showLoading();
     try {
       var dbRats = await window.db_loadRats();
-      var sorted = dbRats.sort(function(a,b){ return a.id - b.id; });
-      rats  = sorted.filter(function(r){ return r.litter !== 'b'; });
-      ratsB = sorted.filter(function(r){ return r.litter === 'b'; });
-      renderGrid();
-      renderGridB();
-      setTimeout(attachRatSwipes, 100);
+      var sorted = dbRats.sort(function(a,b) { return a.id - b.id; });
+      rats  = sorted.filter(function(r) { return r.litter !== 'b'; });
+      ratsB = sorted.filter(function(r) { return r.litter === 'b'; });
+      renderGrid(); renderGridB();
 
       var aboutHtml = await window.db_loadAbout();
       if (aboutHtml) document.getElementById('about-display').innerHTML = aboutHtml;
 
-      // Litter A parents
       var parents = await window.db_loadParents();
       ['mom','dad'].forEach(function(who) {
-        var p = parents[who];
-        if (!p) return;
+        var p = parents[who]; if (!p) return;
         parentData[who] = { name: p.name||'', desc: p.desc||'' };
         if (p.name) document.getElementById(who+'-name-display').textContent = p.name;
         if (p.desc) document.getElementById(who+'-desc-display').textContent = p.desc;
         if (p.images && p.images.length) {
-          var img = document.getElementById(who + '-img');
-          img.src = p.images[0];
-          img.style.display = 'block';
-          document.getElementById(who + '-upload-area').style.display = 'none';
+          var img = document.getElementById(who+'-img');
+          img.src = p.images[0]; img.style.display = 'block';
+          document.getElementById(who+'-upload-area').style.display = 'none';
         }
       });
 
-      // Litter B parents (stored under momb / dadb keys)
       ['mom','dad'].forEach(async function(who) {
         try {
-          var pb = await window.db_loadParentB(who + 'b');
+          var pb = await window.db_loadParentB(who+'b');
           if (!pb) return;
           parentDataB[who] = { name: pb.name||'', desc: pb.desc||'' };
           if (pb.name) document.getElementById(who+'-name-display-b').textContent = pb.name;
           if (pb.desc) document.getElementById(who+'-desc-display-b').textContent = pb.desc;
           if (pb.images && pb.images.length) {
-            var imgB = document.getElementById(who + '-img-b');
-            imgB.src = pb.images[0];
-            imgB.style.display = 'block';
-            document.getElementById(who + '-upload-area-b').style.display = 'none';
+            var imgB = document.getElementById(who+'-img-b');
+            imgB.src = pb.images[0]; imgB.style.display = 'block';
+            document.getElementById(who+'-upload-area-b').style.display = 'none';
           }
-        } catch(e) { /* no litter B parent yet */ }
+        } catch(e) {}
       });
 
       var siteText = await window.db_loadSiteText();
       if (siteText) {
         function setTxt(id, val) { if (val && document.getElementById(id)) document.getElementById(id).textContent = val; }
-        setTxt('site-title',        siteText.title);
-        setTxt('site-tagline',      siteText.tagline);
-        setTxt('sub-title',         siteText.subTitle);
-        setTxt('sub-tagline',       siteText.subTagline);
-        setTxt('title-available',   siteText.titleAvailable);
-        setTxt('title-parents',     siteText.titleParents);
-        setTxt('title-about',       siteText.titleAbout);
-        setTxt('title-available-b', siteText.titleAvailableB);
-        setTxt('title-parents-b',   siteText.titleParentsB);
+        setTxt('site-title', siteText.title); setTxt('site-tagline', siteText.tagline);
+        setTxt('sub-title', siteText.subTitle); setTxt('sub-tagline', siteText.subTagline);
+        setTxt('title-available', siteText.titleAvailable); setTxt('title-parents', siteText.titleParents);
+        setTxt('title-about', siteText.titleAbout);
+        setTxt('title-available-b', siteText.titleAvailableB); setTxt('title-parents-b', siteText.titleParentsB);
       }
-    } catch(e) {
-      console.error('DB load error:', e);
-      renderGrid();
-      renderGridB();
-    }
+    } catch(e) { console.error('DB load error:', e); renderGrid(); renderGridB(); }
   }
-
-  if (window.dbReady) {
-    initFromDb();
-  } else {
-    window.addEventListener('dbReady', initFromDb);
-  }
+  if (window.dbReady) { initFromDb(); } else { window.addEventListener('dbReady', initFromDb); }
 </script>
 
 </body>
