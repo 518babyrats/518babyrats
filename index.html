@@ -304,10 +304,10 @@
   }
 
   /* Carousel on rat card */
-  .rat-card .carousel,
-
-
-
+  .rat-card .carousel {
+    position: relative;
+    overflow: hidden;
+  }
 
   .carousel-track {
     display: flex;
@@ -1852,7 +1852,14 @@
         + (imgs.length > 1 ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">\u2039</button><button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">\u203a</button><div class="carousel-dots" id="dots-' + r.id + '">' + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('') + '</div>' : '') + '</div>';
       var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">' + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
       var adminBtns = isAdmin ? '<button class="btn-delete admin-only" onclick="deleteRat(' + r.id + ')">\u2715</button><button class="btn-edit-listing admin-only" onclick="openEditModal(' + r.id + ')">\u270f\ufe0f</button>' : '';
-      var body = '<div class="rat-card-body">' + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '') + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '') + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '') + '<div class="rat-footer"><span class="rat-price">' + (hasPrice(r.price) ? '$' + parseFloat(r.price).toFixed(2) : 'Ask for price') + '</span></div></div>';
+      var pVal = r.price !== undefined && r.price !== null && r.price !== '' ? parseFloat(r.price) : NaN;
+      var priceStr = !isNaN(pVal) ? '$' + pVal.toFixed(2) : 'Ask for price';
+      var body = '<div class="rat-card-body">'
+        + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '')
+        + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '')
+        + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '')
+        + '<div class="rat-footer"><span class="rat-price">' + priceStr + '</span></div>'
+        + '</div>';
       return '<div class="rat-card" style="animation-delay:' + (i*0.05) + 's">' + carousel + badge + adminBtns + body + '</div>';
     }).join('');
   }
@@ -2041,7 +2048,14 @@
         + (imgs.length > 1 ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">\u2039</button><button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">\u203a</button><div class="carousel-dots" id="dots-' + r.id + '">' + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('') + '</div>' : '') + '</div>';
       var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">' + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
       var adminBtns = isAdmin ? '<button class="btn-delete admin-only" onclick="deleteRatB(' + r.id + ')">\u2715</button><button class="btn-edit-listing admin-only" onclick="openEditModal(' + r.id + ')">\u270f\ufe0f</button>' : '';
-      var body = '<div class="rat-card-body">' + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '') + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '') + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '') + '<div class="rat-footer"><span class="rat-price">' + (hasPrice(r.price) ? '$' + parseFloat(r.price).toFixed(2) : 'Ask for price') + '</span></div></div>';
+      var pVal = r.price !== undefined && r.price !== null && r.price !== '' ? parseFloat(r.price) : NaN;
+      var priceStr = !isNaN(pVal) ? '$' + pVal.toFixed(2) : 'Ask for price';
+      var body = '<div class="rat-card-body">'
+        + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '')
+        + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '')
+        + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '')
+        + '<div class="rat-footer"><span class="rat-price">' + priceStr + '</span></div>'
+        + '</div>';
       return '<div class="rat-card" style="animation-delay:' + (i*0.05) + 's">' + carousel + badge + adminBtns + body + '</div>';
     }).join('');
   }
