@@ -893,7 +893,7 @@
     position: relative;
     z-index: 1;
     background: var(--brown);
-    padding: 30px 24px;
+    padding: 22px 24px;
     text-align: center;
     border-radius: 16px;
     overflow: hidden;
@@ -1647,10 +1647,11 @@
   </div>
 </main>
 
+<div style="max-width:1200px; margin:0 auto; padding:0 24px; box-sizing:border-box;">
 <section id="subscribe-section">
-  <h2 id="sub-title" onclick="if(isAdmin) editSubField('sub-title','sub-title-input')" style="">Stay in the Loop 🐀</h2>
+  <h2 id="sub-title" onclick="if(isAdmin) editSubField('sub-title','sub-title-input')" style="">Join the rat nest! 🐀</h2>
   <input id="sub-title-input" type="text" onblur="saveSubField('sub-title','sub-title-input')" onkeydown="if(event.key==='Enter') this.blur()" style="display:none; font-family:'Calibri','Candara',sans-serif; font-size:2rem; color:var(--cream); background:transparent; border:none; border-bottom:2px solid var(--gold); outline:none; text-align:center; width:100%; margin-bottom:8px;">
-  <p id="sub-tagline" onclick="if(isAdmin) editSubField('sub-tagline','sub-tagline-input')" style="">Sign up to hear about new litters before anyone else</p>
+  <p id="sub-tagline" onclick="if(isAdmin) editSubField('sub-tagline','sub-tagline-input')" style="">Follow along to be notified of new babies.</p>
   <input id="sub-tagline-input" type="text" onblur="saveSubField('sub-tagline','sub-tagline-input')" onkeydown="if(event.key==='Enter') this.blur()" style="display:none; font-family:'Calibri','Candara',sans-serif; font-size:0.95rem; color:#c4a98a; background:transparent; border:none; border-bottom:2px solid var(--gold); outline:none; text-align:center; width:100%; margin-bottom:28px;">
   <div class="subscribe-form">
     <input type="email" id="sub-email" placeholder="Your email address" onkeydown="if(event.key==='Enter') submitSubscribe()">
@@ -1658,6 +1659,7 @@
   </div>
   <div class="subscribe-success" id="sub-success">You're on the list! We'll be in touch 🐀</div>
 </section>
+</div>
 
 <div class="modal-overlay" id="edit-modal" onclick="closeEditModal(event)">
   <div class="modal">
