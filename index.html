@@ -1325,6 +1325,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, collection, doc, setDoc, getDoc, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
   import { getStorage, ref, uploadString, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+  import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyAnFIXwrfUM-vXz2i5HU44OCIYDDGexHDc",
@@ -1338,6 +1339,10 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const storage = getStorage(app);
+  const auth = getAuth(app);
+  window._firebaseAuth = auth;
+  window._signInWithEmailAndPassword = signInWithEmailAndPassword;
+  window._signOut = signOut;
 
   async function saveRatToDb(rat) {
     const urls = [];
@@ -1686,9 +1691,10 @@
 <div id="admin-login-modal">
   <div id="admin-login-box">
     <h3>Admin Login</h3>
-    <p>Enter your password to edit the site</p>
+    <p>Enter your email and password</p>
+    <input type="email" id="admin-email-input" placeholder="Email" onkeydown="if(event.key==='Enter') checkPassword()" style="margin-bottom:10px;">
     <input type="password" id="admin-password-input" placeholder="Password" onkeydown="if(event.key==='Enter') checkPassword()">
-    <div id="admin-login-error">Incorrect password. Try again.</div>
+    <div id="admin-login-error">Incorrect email or password. Try again.</div>
     <button class="btn-modal-send" onclick="checkPassword()" style="width:100%">Login</button>
     <button class="btn-modal-cancel" onclick="document.getElementById('admin-login-modal').classList.remove('open')" style="margin-top:8px;width:100%">Cancel</button>
   </div>
@@ -2136,27 +2142,32 @@
     clearTimeout(secretTimer);
     if (secretClicks >= 5) {
       secretClicks = 0;
-      if (isAdmin) { isAdmin = false; document.body.classList.remove('admin-mode'); renderGrid(); renderGridB(); applyLitterBVisibility(); }
+      if (isAdmin) { isAdmin = false; document.body.classList.remove('admin-mode'); renderGrid(); renderGridB(); applyLitterBVisibility(); if (window._firebaseAuth && window._signOut) window._signOut(window._firebaseAuth); }
       else { openAdminLogin(); }
     } else { secretTimer = setTimeout(function() { secretClicks = 0; }, 2000); }
   }
   function openAdminLogin() {
+    document.getElementById('admin-email-input').value = '';
     document.getElementById('admin-password-input').value = '';
     document.getElementById('admin-login-error').style.display = 'none';
     document.getElementById('admin-login-modal').classList.add('open');
-    setTimeout(function() { document.getElementById('admin-password-input').focus(); }, 100);
+    setTimeout(function() { document.getElementById('admin-email-input').focus(); }, 100);
   }
   function checkPassword() {
-    var input = document.getElementById('admin-password-input').value;
-    if (input === 'Orochimaru1!') {
+    var email = document.getElementById('admin-email-input').value.trim();
+    var password = document.getElementById('admin-password-input').value;
+    var auth = window._firebaseAuth;
+    var signIn = window._signInWithEmailAndPassword;
+    if (!auth || !signIn) { alert('Auth not ready, please try again.'); return; }
+    signIn(auth, email, password).then(function() {
       isAdmin = true; document.body.classList.add('admin-mode');
       document.getElementById('admin-login-modal').classList.remove('open');
       renderGrid(); renderGridB(); applyLitterBVisibility();
-    } else {
+    }).catch(function() {
       document.getElementById('admin-login-error').style.display = 'block';
       document.getElementById('admin-password-input').value = '';
       document.getElementById('admin-password-input').focus();
-    }
+    });
   }
 
   function showLoading() {
