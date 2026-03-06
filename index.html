@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>518 Baby Rats 🐀</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("NNFkhRmNG8C-ruMGk");</script>
 <style>
   :root {
     --cream: #fdf6ec;
@@ -80,7 +82,7 @@
     z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 24px;
+    padding: 20px 24px 50px;
   }
 
   .section-title {
@@ -1433,191 +1435,7 @@
 </header>
 
 <main>
-  <div style="display:flex; align-items:center; margin-bottom:30px;">
-    <h2 class="section-title" style="margin-bottom:0; flex:1" id="title-available" onclick="editSectionTitle(this)" title="">Available Rats</h2>
-    <button onclick="triggerUpload()" class="admin-only-inline" style="display:none; padding:7px 16px; background:var(--rust); color:white; border:none; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--rust)'">+ Add Rat</button>
-  </div>
-  <input type="file" id="file-input" accept="image/*" style="display:none" multiple>
-  <div id="add-form">
-    <div class="form-body">
-      <div style="flex-shrink:0">
-        <div class="img-thumb-row" id="form-thumb-row">
-          <div class="img-thumb-wrap add-more" onclick="document.getElementById('file-input').click()" title="Add photo">+</div>
-        </div>
-        <p style="font-size:0.75rem; color:#b89a80; margin-top:6px; text-align:center">First photo is main</p>
-      </div>
-      <div class="form-fields">
-        <label>Description</label>
-        <textarea id="input-desc" placeholder=""></textarea>
-        <div class="form-row">
-          <div><label>Price ($)</label><input type="number" id="input-price" placeholder="" min="0"></div>
-          <div><label>Sex</label>
-            <select id="input-sex" style="width:100%; padding:10px 14px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.95rem; color:var(--dark); background:var(--cream); outline:none; cursor:pointer">
-              <option value="">Select...</option><option value="Female">Female</option><option value="Male">Male</option>
-            </select>
-          </div>
-        </div>
-        <div style="display:flex; gap:10px; margin-top:20px;">
-          <button class="btn-add" style="margin-top:0" onclick="addRat()">Add to Shop 🐀</button>
-          <button class="btn-modal-cancel" onclick="cancelAdd()">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="rat-grid"></div>
-
-  <div style="margin-top:60px;">
-    <h2 class="section-title" id="title-parents" onclick="editSectionTitle(this)" title="">Meet the Parents</h2>
-    <div id="parents-grid">
-      <div class="parent-card" id="parent-mom">
-        <input type="file" id="mom-file" accept="image/*" style="display:none" onchange="loadParent('mom',this)">
-        <div class="parent-photo-box" id="mom-photo-box">
-          <div class="parent-upload-area admin-only" id="mom-upload-area" onclick="document.getElementById('mom-file').click()">
-            <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Mom's Photo</p>
-          </div>
-          <img id="mom-img" class="parent-photo" style="display:none">
-        </div>
-        <div class="parent-info">
-          <div class="parent-label">Mom</div>
-          <div class="parent-name-row">
-            <span class="parent-name" id="mom-name-display"></span>
-            <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParent('mom')">✏️</button>
-          </div>
-          <p class="parent-desc" id="mom-desc-display"></p>
-          <div class="parent-edit-fields" id="mom-edit" style="display:none">
-            <input type="text" id="mom-name-input" placeholder="Mom's name">
-            <textarea id="mom-desc-input" placeholder="Variety, temperament, health notes..."></textarea>
-            <div style="display:flex;gap:8px;margin-top:8px;">
-              <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParent('mom')">Save</button>
-              <button class="btn-modal-cancel" onclick="cancelParent('mom')">Cancel</button>
-            </div>
-          </div>
-          <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('mom-file').click()">Change Photo</button>
-        </div>
-      </div>
-      <div class="parent-card" id="parent-dad">
-        <input type="file" id="dad-file" accept="image/*" style="display:none" onchange="loadParent('dad',this)">
-        <div class="parent-photo-box" id="dad-photo-box">
-          <div class="parent-upload-area admin-only" id="dad-upload-area" onclick="document.getElementById('dad-file').click()">
-            <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Dad's Photo</p>
-          </div>
-          <img id="dad-img" class="parent-photo" style="display:none">
-        </div>
-        <div class="parent-info">
-          <div class="parent-label">Dad</div>
-          <div class="parent-name-row">
-            <span class="parent-name" id="dad-name-display"></span>
-            <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParent('dad')">✏️</button>
-          </div>
-          <p class="parent-desc" id="dad-desc-display"></p>
-          <div class="parent-edit-fields" id="dad-edit" style="display:none">
-            <input type="text" id="dad-name-input" placeholder="Dad's name">
-            <textarea id="dad-desc-input" placeholder="Variety, temperament, health notes..."></textarea>
-            <div style="display:flex;gap:8px;margin-top:8px;">
-              <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParent('dad')">Save</button>
-              <button class="btn-modal-cancel" onclick="cancelParent('dad')">Cancel</button>
-            </div>
-          </div>
-          <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('dad-file').click()">Change Photo</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:80px; border-top:2px solid var(--warm); padding-top:60px;">
-    <div style="display:flex; align-items:center; margin-bottom:30px;">
-      <h2 class="section-title" style="margin-bottom:0; flex:1" id="title-available-b" onclick="editSectionTitle(this)" title="">Available Rats</h2>
-      <button onclick="triggerUploadB()" class="admin-only-inline" style="display:none; padding:7px 16px; background:var(--rust); color:white; border:none; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--rust)'">+ Add Rat</button>
-    </div>
-    <input type="file" id="file-input-b" accept="image/*" style="display:none" multiple>
-    <div id="add-form-b">
-      <div class="form-body">
-        <div style="flex-shrink:0">
-          <div class="img-thumb-row" id="form-thumb-row-b">
-            <div class="img-thumb-wrap add-more" onclick="document.getElementById('file-input-b').click()" title="Add photo">+</div>
-          </div>
-          <p style="font-size:0.75rem; color:#b89a80; margin-top:6px; text-align:center">First photo is main</p>
-        </div>
-        <div class="form-fields">
-          <label>Description</label>
-          <textarea id="input-desc-b" placeholder=""></textarea>
-          <div class="form-row">
-            <div><label>Price ($)</label><input type="number" id="input-price-b" placeholder="" min="0"></div>
-            <div><label>Sex</label>
-              <select id="input-sex-b" style="width:100%; padding:10px 14px; border:1.5px solid #e8d9c8; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.95rem; color:var(--dark); background:var(--cream); outline:none; cursor:pointer">
-                <option value="">Select...</option><option value="Female">Female</option><option value="Male">Male</option>
-              </select>
-            </div>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:20px;">
-            <button class="btn-add" style="margin-top:0" onclick="addRatB()">Add to Shop 🐀</button>
-            <button class="btn-modal-cancel" onclick="cancelAddB()">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="rat-grid-b"></div>
-
-    <div style="margin-top:60px;">
-      <h2 class="section-title" id="title-parents-b" onclick="editSectionTitle(this)" title="">Meet the Parents</h2>
-      <div id="parents-grid-b">
-        <div class="parent-card" id="parent-mom-b">
-          <input type="file" id="mom-file-b" accept="image/*" style="display:none" onchange="loadParentB('mom',this)">
-          <div class="parent-photo-box" id="mom-photo-box-b">
-            <div class="parent-upload-area admin-only" id="mom-upload-area-b" onclick="document.getElementById('mom-file-b').click()">
-              <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Mom's Photo</p>
-            </div>
-            <img id="mom-img-b" class="parent-photo" style="display:none">
-          </div>
-          <div class="parent-info">
-            <div class="parent-label">Mom</div>
-            <div class="parent-name-row">
-              <span class="parent-name" id="mom-name-display-b"></span>
-              <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParentB('mom')">✏️</button>
-            </div>
-            <p class="parent-desc" id="mom-desc-display-b"></p>
-            <div class="parent-edit-fields" id="mom-edit-b" style="display:none">
-              <input type="text" id="mom-name-input-b" placeholder="Mom's name">
-              <textarea id="mom-desc-input-b" placeholder="Variety, temperament, health notes..."></textarea>
-              <div style="display:flex;gap:8px;margin-top:8px;">
-                <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParentB('mom')">Save</button>
-                <button class="btn-modal-cancel" onclick="cancelParentB('mom')">Cancel</button>
-              </div>
-            </div>
-            <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('mom-file-b').click()">Change Photo</button>
-          </div>
-        </div>
-        <div class="parent-card" id="parent-dad-b">
-          <input type="file" id="dad-file-b" accept="image/*" style="display:none" onchange="loadParentB('dad',this)">
-          <div class="parent-photo-box" id="dad-photo-box-b">
-            <div class="parent-upload-area admin-only" id="dad-upload-area-b" onclick="document.getElementById('dad-file-b').click()">
-              <span style="font-size:2.5rem;display:block;margin-bottom:10px;">🐀</span><p>Upload Dad's Photo</p>
-            </div>
-            <img id="dad-img-b" class="parent-photo" style="display:none">
-          </div>
-          <div class="parent-info">
-            <div class="parent-label">Dad</div>
-            <div class="parent-name-row">
-              <span class="parent-name" id="dad-name-display-b"></span>
-              <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParentB('dad')">✏️</button>
-            </div>
-            <p class="parent-desc" id="dad-desc-display-b"></p>
-            <div class="parent-edit-fields" id="dad-edit-b" style="display:none">
-              <input type="text" id="dad-name-input-b" placeholder="Dad's name">
-              <textarea id="dad-desc-input-b" placeholder="Variety, temperament, health notes..."></textarea>
-              <div style="display:flex;gap:8px;margin-top:8px;">
-                <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParentB('dad')">Save</button>
-                <button class="btn-modal-cancel" onclick="cancelParentB('dad')">Cancel</button>
-              </div>
-            </div>
-            <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('dad-file-b').click()">Change Photo</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:60px;">
+  <div style="margin-top:0;">
     <div id="about-header">
       <h2 class="section-title" id="title-about" onclick="editSectionTitle(this)" title="">About Our Home</h2>
       <button id="edit-btn" onclick="toggleEdit()" class="admin-only-inline" style="display:none">✏️ Edit</button>
@@ -1643,6 +1461,178 @@
       </div>
     </section>
   </div>
+
+  <div style="display:flex; align-items:center; margin-bottom:30px; margin-top:60px;">
+    <h2 class="section-title" style="margin-bottom:0; flex:1" id="title-available" onclick="editSectionTitle(this)" title="">Available Rats</h2>
+    <button onclick="triggerUpload()" class="admin-only-inline" style="display:none; padding:7px 16px; background:var(--rust); color:white; border:none; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--rust)'">+ Add Rat</button>
+  </div>
+  <input type="file" id="file-input" accept="image/*" style="display:none" multiple>
+  <div id="add-form">
+    <div class="form-body">
+      <div style="flex-shrink:0">
+        <div class="img-thumb-row" id="form-thumb-row">
+          <div class="img-thumb-wrap add-more" onclick="document.getElementById('file-input').click()" title="Add photo">+</div>
+        </div>
+        <p style="font-size:0.75rem; color:#b89a80; margin-top:6px; text-align:center">First photo is main</p>
+      </div>
+      <div class="form-fields">
+        <label>Description</label>
+        <textarea id="input-desc" placeholder=""></textarea>
+        <div style="display:flex; gap:10px; margin-top:20px;">
+          <button class="btn-add" style="margin-top:0" onclick="addRat()">Add to Shop</button>
+          <button class="btn-modal-cancel" onclick="cancelAdd()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="rat-grid"></div>
+
+  <div style="margin-top:60px;">
+    <h2 class="section-title" id="title-parents" onclick="editSectionTitle(this)" title="">Meet the Parents</h2>
+    <div id="parents-grid">
+      <div class="parent-card" id="parent-mom">
+        <input type="file" id="mom-file" accept="image/*" style="display:none" onchange="loadParent('mom',this)">
+        <div class="parent-photo-box" id="mom-photo-box">
+          <div class="parent-upload-area admin-only" id="mom-upload-area" onclick="document.getElementById('mom-file').click()">
+            <p>Upload Mom's Photo</p>
+          </div>
+          <img id="mom-img" class="parent-photo" style="display:none">
+        </div>
+        <div class="parent-info">
+          <div class="parent-label">Mom</div>
+          <div class="parent-name-row">
+            <span class="parent-name" id="mom-name-display"></span>
+            <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParent('mom')">✏️</button>
+          </div>
+          <p class="parent-desc" id="mom-desc-display"></p>
+          <div class="parent-edit-fields" id="mom-edit" style="display:none">
+            <input type="text" id="mom-name-input" placeholder="Mom's name">
+            <textarea id="mom-desc-input" placeholder="Variety, temperament, health notes..."></textarea>
+            <div style="display:flex;gap:8px;margin-top:8px;">
+              <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParent('mom')">Save</button>
+              <button class="btn-modal-cancel" onclick="cancelParent('mom')">Cancel</button>
+            </div>
+          </div>
+          <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('mom-file').click()">Change Photo</button>
+        </div>
+      </div>
+      <div class="parent-card" id="parent-dad">
+        <input type="file" id="dad-file" accept="image/*" style="display:none" onchange="loadParent('dad',this)">
+        <div class="parent-photo-box" id="dad-photo-box">
+          <div class="parent-upload-area admin-only" id="dad-upload-area" onclick="document.getElementById('dad-file').click()">
+            <p>Upload Dad's Photo</p>
+          </div>
+          <img id="dad-img" class="parent-photo" style="display:none">
+        </div>
+        <div class="parent-info">
+          <div class="parent-label">Dad</div>
+          <div class="parent-name-row">
+            <span class="parent-name" id="dad-name-display"></span>
+            <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParent('dad')">✏️</button>
+          </div>
+          <p class="parent-desc" id="dad-desc-display"></p>
+          <div class="parent-edit-fields" id="dad-edit" style="display:none">
+            <input type="text" id="dad-name-input" placeholder="Dad's name">
+            <textarea id="dad-desc-input" placeholder="Variety, temperament, health notes..."></textarea>
+            <div style="display:flex;gap:8px;margin-top:8px;">
+              <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParent('dad')">Save</button>
+              <button class="btn-modal-cancel" onclick="cancelParent('dad')">Cancel</button>
+            </div>
+          </div>
+          <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('dad-file').click()">Change Photo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="litter-b-toggle-wrap" class="admin-only" style="display:none; text-align:center; margin-top:60px;">
+    <button onclick="toggleLitterB()" id="litter-b-toggle-btn" style="padding:10px 28px; background:var(--card); color:var(--rust); border:2px dashed var(--rust); border-radius:10px; font-family:'Calibri','Candara',sans-serif; font-size:0.95rem; font-weight:500; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#fff0e8'" onmouseout="this.style.background='var(--card)'">+ Show Second Litter Section</button>
+  </div>
+  <div id="litter-b-wrapper" style="display:none; margin-top:80px; border-top:2px solid var(--warm); padding-top:60px;">
+    <div style="display:flex; align-items:center; margin-bottom:30px;">
+      <h2 class="section-title" style="margin-bottom:0; flex:1" id="title-available-b" onclick="editSectionTitle(this)" title="">Available Rats</h2>
+      <button onclick="triggerUploadB()" class="admin-only-inline" style="display:none; padding:7px 16px; background:var(--rust); color:white; border:none; border-radius:8px; font-family:'Calibri','Candara',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--rust)'">+ Add Rat</button>
+    </div>
+    <input type="file" id="file-input-b" accept="image/*" style="display:none" multiple>
+    <div id="add-form-b">
+      <div class="form-body">
+        <div style="flex-shrink:0">
+          <div class="img-thumb-row" id="form-thumb-row-b">
+            <div class="img-thumb-wrap add-more" onclick="document.getElementById('file-input-b').click()" title="Add photo">+</div>
+          </div>
+          <p style="font-size:0.75rem; color:#b89a80; margin-top:6px; text-align:center">First photo is main</p>
+        </div>
+        <div class="form-fields">
+          <label>Description</label>
+          <textarea id="input-desc-b" placeholder=""></textarea>
+          <div style="display:flex; gap:10px; margin-top:20px;">
+            <button class="btn-add" style="margin-top:0" onclick="addRatB()">Add to Shop</button>
+            <button class="btn-modal-cancel" onclick="cancelAddB()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rat-grid-b"></div>
+
+    <div style="margin-top:60px;">
+      <h2 class="section-title" id="title-parents-b" onclick="editSectionTitle(this)" title="">Meet the Parents</h2>
+      <div id="parents-grid-b">
+        <div class="parent-card" id="parent-mom-b">
+          <input type="file" id="mom-file-b" accept="image/*" style="display:none" onchange="loadParentB('mom',this)">
+          <div class="parent-photo-box" id="mom-photo-box-b">
+            <div class="parent-upload-area admin-only" id="mom-upload-area-b" onclick="document.getElementById('mom-file-b').click()">
+              <p>Upload Mom's Photo</p>
+            </div>
+            <img id="mom-img-b" class="parent-photo" style="display:none">
+          </div>
+          <div class="parent-info">
+            <div class="parent-label">Mom</div>
+            <div class="parent-name-row">
+              <span class="parent-name" id="mom-name-display-b"></span>
+              <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParentB('mom')">✏️</button>
+            </div>
+            <p class="parent-desc" id="mom-desc-display-b"></p>
+            <div class="parent-edit-fields" id="mom-edit-b" style="display:none">
+              <input type="text" id="mom-name-input-b" placeholder="Mom's name">
+              <textarea id="mom-desc-input-b" placeholder="Variety, temperament, health notes..."></textarea>
+              <div style="display:flex;gap:8px;margin-top:8px;">
+                <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParentB('mom')">Save</button>
+                <button class="btn-modal-cancel" onclick="cancelParentB('mom')">Cancel</button>
+              </div>
+            </div>
+            <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('mom-file-b').click()">Change Photo</button>
+          </div>
+        </div>
+        <div class="parent-card" id="parent-dad-b">
+          <input type="file" id="dad-file-b" accept="image/*" style="display:none" onchange="loadParentB('dad',this)">
+          <div class="parent-photo-box" id="dad-photo-box-b">
+            <div class="parent-upload-area admin-only" id="dad-upload-area-b" onclick="document.getElementById('dad-file-b').click()">
+              <p>Upload Dad's Photo</p>
+            </div>
+            <img id="dad-img-b" class="parent-photo" style="display:none">
+          </div>
+          <div class="parent-info">
+            <div class="parent-label">Dad</div>
+            <div class="parent-name-row">
+              <span class="parent-name" id="dad-name-display-b"></span>
+              <button class="btn-edit-parent admin-only-inline" style="display:none" onclick="editParentB('dad')">✏️</button>
+            </div>
+            <p class="parent-desc" id="dad-desc-display-b"></p>
+            <div class="parent-edit-fields" id="dad-edit-b" style="display:none">
+              <input type="text" id="dad-name-input-b" placeholder="Dad's name">
+              <textarea id="dad-desc-input-b" placeholder="Variety, temperament, health notes..."></textarea>
+              <div style="display:flex;gap:8px;margin-top:8px;">
+                <button class="btn-add" style="padding:8px 20px;margin-top:0" onclick="saveParentB('dad')">Save</button>
+                <button class="btn-modal-cancel" onclick="cancelParentB('dad')">Cancel</button>
+              </div>
+            </div>
+            <button class="parent-change-photo admin-only" style="display:none" onclick="document.getElementById('dad-file-b').click()">Change Photo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <div style="max-width:1200px; margin:0 auto; padding:0 24px; box-sizing:border-box;">
@@ -1667,14 +1657,6 @@
     <input type="file" id="edit-file-input" accept="image/*" style="display:none" onchange="swapEditImage(this)" multiple>
     <label>Description</label>
     <textarea id="edit-desc" style="width:100%;padding:10px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;background:var(--cream);outline:none;resize:vertical;min-height:80px;margin-bottom:12px;"></textarea>
-    <div class="form-row" style="margin-bottom:12px">
-      <div><label>Price ($)</label><input type="number" id="edit-price" min="0" style="width:100%;padding:10px 14px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;background:var(--cream);outline:none;"></div>
-      <div><label>Sex</label>
-        <select id="edit-sex" style="width:100%;padding:10px 14px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;color:var(--dark);background:var(--cream);outline:none;cursor:pointer">
-          <option value="">Select...</option><option value="Female">Female</option><option value="Male">Male</option>
-        </select>
-      </div>
-    </div>
     <label>Status</label>
     <select id="edit-sold" style="width:100%;padding:10px 14px;border:1.5px solid #e8d9c8;border-radius:8px;font-family:'Calibri','Candara',sans-serif;font-size:0.95rem;color:var(--dark);background:var(--cream);outline:none;cursor:pointer;margin-bottom:20px;">
       <option value="available">Available</option><option value="pending">Pending</option><option value="sold">Sold</option>
@@ -1818,17 +1800,13 @@
   function cancelAdd() {
     pendingImages = []; fileInput.value = '';
     document.getElementById('input-desc').value = '';
-    document.getElementById('input-price').value = '';
-    document.getElementById('input-sex').value = '';
     document.getElementById('form-thumb-row').innerHTML = '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input\').click()" title="Add photo">+</div>';
     addForm.classList.remove('visible');
   }
   function addRat() {
     var desc = document.getElementById('input-desc').value.trim();
-    var price = document.getElementById('input-price').value;
-    var sex = document.getElementById('input-sex').value.trim();
     if (!pendingImages.length) return alert('Please upload at least one photo!');
-    var rat = { id: Date.now(), name: '', variety: '', desc: desc, price: price, sex: sex, images: pendingImages.slice(), status: 'available' };
+    var rat = { id: Date.now(), name: '', variety: '', desc: desc, images: pendingImages.slice(), status: 'available' };
     rats.push(rat);
     cancelAdd();
     renderGrid();
@@ -1841,7 +1819,7 @@
     var grid = document.getElementById('rat-grid');
     if (!grid) return;
     if (rats.length === 0) {
-      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">\U0001f400</span><p>' + (isAdmin ? 'No rats listed yet.' : 'More rats coming soon!') + '</p></div>';
+      grid.innerHTML = isAdmin ? '<div class="empty-state" style="grid-column:1/-1"><p>No rats listed yet.</p></div>' : '';
       return;
     }
     grid.innerHTML = rats.map(function(r, i) {
@@ -1850,13 +1828,9 @@
         + (imgs.length > 1 ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">\u2039</button><button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">\u203a</button><div class="carousel-dots" id="dots-' + r.id + '">' + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('') + '</div>' : '') + '</div>';
       var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">' + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
       var adminBtns = isAdmin ? '<button class="btn-delete admin-only" onclick="deleteRat(' + r.id + ')">\u2715</button><button class="btn-edit-listing admin-only" onclick="openEditModal(' + r.id + ')">\u270f\ufe0f</button>' : '';
-      var pVal = r.price !== undefined && r.price !== null && r.price !== '' ? parseFloat(r.price) : NaN;
-      var priceStr = !isNaN(pVal) ? '$' + pVal.toFixed(2) : 'Ask for price';
       var body = '<div class="rat-card-body">'
         + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '')
-        + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '')
         + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '')
-        + '<div class="rat-footer"><span class="rat-price">' + priceStr + '</span></div>'
         + '</div>';
       return '<div class="rat-card" style="animation-delay:' + (i*0.05) + 's">' + carousel + badge + adminBtns + body + '</div>';
     }).join('');
@@ -1896,8 +1870,6 @@
     editPendingImages = (r.images || [r.image]).filter(Boolean).slice();
     renderEditThumbs();
     document.getElementById('edit-desc').value = r.desc || '';
-    document.getElementById('edit-price').value = r.price || '';
-    document.getElementById('edit-sex').value = r.sex || '';
     document.getElementById('edit-sold').value = r.status || 'available';
     document.getElementById('edit-modal').classList.add('open');
   }
@@ -1928,8 +1900,6 @@
     var idx = arr.findIndex(function(x) { return x.id === editingId; });
     if (idx === -1) return;
     arr[idx].desc = document.getElementById('edit-desc').value.trim();
-    arr[idx].price = document.getElementById('edit-price').value;
-    arr[idx].sex = document.getElementById('edit-sex').value.trim();
     arr[idx].status = document.getElementById('edit-sold').value;
     arr[idx].images = editPendingImages.slice();
     document.getElementById('edit-modal').classList.remove('open');
@@ -2017,17 +1987,13 @@
   function cancelAddB() {
     pendingImagesB = []; fileInputB.value = '';
     document.getElementById('input-desc-b').value = '';
-    document.getElementById('input-price-b').value = '';
-    document.getElementById('input-sex-b').value = '';
     document.getElementById('form-thumb-row-b').innerHTML = '<div class="img-thumb-wrap add-more" onclick="document.getElementById(\'file-input-b\').click()" title="Add photo">+</div>';
     addFormB.classList.remove('visible');
   }
   function addRatB() {
     var desc = document.getElementById('input-desc-b').value.trim();
-    var price = document.getElementById('input-price-b').value;
-    var sex = document.getElementById('input-sex-b').value.trim();
     if (!pendingImagesB.length) return alert('Please upload at least one photo!');
-    var rat = { id: Date.now(), name: '', variety: '', desc: desc, price: price, sex: sex, images: pendingImagesB.slice(), status: 'available', litter: 'b' };
+    var rat = { id: Date.now(), name: '', variety: '', desc: desc, images: pendingImagesB.slice(), status: 'available', litter: 'b' };
     ratsB.push(rat);
     cancelAddB();
     renderGridB();
@@ -2037,7 +2003,7 @@
     var grid = document.getElementById('rat-grid-b');
     if (!grid) return;
     if (ratsB.length === 0) {
-      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">\U0001f400</span><p>' + (isAdmin ? 'No rats listed yet.' : 'More rats coming soon!') + '</p></div>';
+      grid.innerHTML = isAdmin ? '<div class="empty-state" style="grid-column:1/-1"><p>No rats listed yet.</p></div>' : '';
       return;
     }
     grid.innerHTML = ratsB.map(function(r, i) {
@@ -2046,13 +2012,9 @@
         + (imgs.length > 1 ? '<button class="carousel-btn prev" onclick="slideCarousel(' + r.id + ',-1,event)">\u2039</button><button class="carousel-btn next" onclick="slideCarousel(' + r.id + ',1,event)">\u203a</button><div class="carousel-dots" id="dots-' + r.id + '">' + imgs.map(function(_, di) { return '<div class="carousel-dot' + (di===0?' active':'') + '" id="dot-' + r.id + '-' + di + '"></div>'; }).join('') + '</div>' : '') + '</div>';
       var badge = '<span class="rat-badge ' + (r.status==='sold'?'sold':r.status==='pending'?'pending':'') + '">' + (r.status==='sold'?'Sold':r.status==='pending'?'Pending':'Available') + '</span>';
       var adminBtns = isAdmin ? '<button class="btn-delete admin-only" onclick="deleteRatB(' + r.id + ')">\u2715</button><button class="btn-edit-listing admin-only" onclick="openEditModal(' + r.id + ')">\u270f\ufe0f</button>' : '';
-      var pVal = r.price !== undefined && r.price !== null && r.price !== '' ? parseFloat(r.price) : NaN;
-      var priceStr = !isNaN(pVal) ? '$' + pVal.toFixed(2) : 'Ask for price';
       var body = '<div class="rat-card-body">'
         + (r.name ? '<div class="rat-name">' + r.name + '</div>' : '')
-        + (r.sex ? '<div class="rat-variety">' + r.sex + '</div>' : '')
         + (r.desc ? '<p class="rat-desc">' + r.desc + '</p>' : '')
-        + '<div class="rat-footer"><span class="rat-price">' + priceStr + '</span></div>'
         + '</div>';
       return '<div class="rat-card" style="animation-delay:' + (i*0.05) + 's">' + carousel + badge + adminBtns + body + '</div>';
     }).join('');
@@ -2098,8 +2060,15 @@
   function submitSubscribe() {
     var email = document.getElementById('sub-email').value.trim();
     if (!email || !email.includes('@')) { document.getElementById('sub-email').style.borderLeft = '3px solid var(--rust)'; return; }
-    document.querySelector('.subscribe-form').style.display = 'none';
-    document.getElementById('sub-success').style.display = 'block';
+    emailjs.send('service_glhagzf', 'template_fvqytlg', { email: email })
+      .then(function() {
+        document.querySelector('.subscribe-form').style.display = 'none';
+        document.getElementById('sub-success').style.display = 'block';
+      })
+      .catch(function(err) {
+        console.error('EmailJS error:', err);
+        alert('Something went wrong. Please try again.');
+      });
   }
 
   function editHeaderField(displayId, inputId) {
@@ -2133,7 +2102,31 @@
       subTitle: txt('sub-title'), subTagline: txt('sub-tagline'),
       titleAvailable: txt('title-available'), titleParents: txt('title-parents'),
       titleAbout: txt('title-about'), titleAvailableB: txt('title-available-b'), titleParentsB: txt('title-parents-b'),
+      litterBVisible: litterBVisible,
     }).catch(function(e) { console.error(e); });
+  }
+
+  var litterBVisible = false;
+
+  function applyLitterBVisibility() {
+    var wrapper = document.getElementById('litter-b-wrapper');
+    var btn = document.getElementById('litter-b-toggle-btn');
+    var toggleWrap = document.getElementById('litter-b-toggle-wrap');
+    if (litterBVisible) {
+      wrapper.style.display = 'block';
+      if (btn) btn.textContent = '— Hide Second Litter Section';
+    } else {
+      wrapper.style.display = 'none';
+      if (btn) btn.textContent = '+ Show Second Litter Section';
+    }
+    // Only show the toggle wrap in admin mode
+    if (toggleWrap) toggleWrap.style.display = isAdmin ? 'block' : 'none';
+  }
+
+  function toggleLitterB() {
+    litterBVisible = !litterBVisible;
+    applyLitterBVisibility();
+    saveSiteTextToDb();
   }
 
   var isAdmin = false;
@@ -2143,7 +2136,7 @@
     clearTimeout(secretTimer);
     if (secretClicks >= 5) {
       secretClicks = 0;
-      if (isAdmin) { isAdmin = false; document.body.classList.remove('admin-mode'); renderGrid(); renderGridB(); }
+      if (isAdmin) { isAdmin = false; document.body.classList.remove('admin-mode'); renderGrid(); renderGridB(); applyLitterBVisibility(); }
       else { openAdminLogin(); }
     } else { secretTimer = setTimeout(function() { secretClicks = 0; }, 2000); }
   }
@@ -2158,7 +2151,7 @@
     if (input === 'Orochimaru1!') {
       isAdmin = true; document.body.classList.add('admin-mode');
       document.getElementById('admin-login-modal').classList.remove('open');
-      renderGrid(); renderGridB();
+      renderGrid(); renderGridB(); applyLitterBVisibility();
     } else {
       document.getElementById('admin-login-error').style.display = 'block';
       document.getElementById('admin-password-input').value = '';
@@ -2168,7 +2161,7 @@
 
   function showLoading() {
     var g = document.getElementById('rat-grid');
-    if (g) g.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="big-rat">\U0001f400</span><p>Loading...</p></div>';
+    if (g) g.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><p>Loading...</p></div>';
   }
   async function initFromDb() {
     showLoading();
@@ -2218,6 +2211,7 @@
         setTxt('title-available', siteText.titleAvailable); setTxt('title-parents', siteText.titleParents);
         setTxt('title-about', siteText.titleAbout);
         setTxt('title-available-b', siteText.titleAvailableB); setTxt('title-parents-b', siteText.titleParentsB);
+        if (siteText.litterBVisible) { litterBVisible = true; applyLitterBVisibility(); }
       }
     } catch(e) { console.error('DB load error:', e); renderGrid(); renderGridB(); }
   }
